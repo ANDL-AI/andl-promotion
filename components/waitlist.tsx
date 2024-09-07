@@ -62,7 +62,7 @@ const Waitlist: React.FC = () => {
       <div className="max-w-md w-full">
         <h2 className="text-2xl font-semibold mb-4 text-hs-secondary text-center">Join Our Waitlist</h2>
         {submitted ? (
-          <div className="text-hs-third text-center">
+          <div className="text-hs-text text-center">
             <p>Thank you for joining the waitlist! We will contact you soon.</p>
           </div>
         ) : (
