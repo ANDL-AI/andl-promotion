@@ -15,10 +15,12 @@ const config: Config = {
       },
       colors:{
         'hs-base': '#FFFFFF', 
-        'hs-secondary': '#190482', 
-        'hs-third': '#7752FE',
-        'hs-fourth': '#8E8FFA ', 
-        'hs-background': '#C2D9FF'
+        'hs-secondary': '#295F98', 
+        'hs-third': '#CDC2A5',
+        'hs-fourth': '#E1D7C6 ', 
+        'hs-background': '#EAE4DD',
+        'linkedin-blue': '#0077B5',
+        'hs-text': '#000000',
       },
       keyframes: {
         scroll: {
