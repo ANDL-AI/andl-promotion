@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image'; // Make sure to import Image
-import Logo from "@/public/andl_new_white.svg";
+import Logo from "@/public/andl_white_color_black_bg.svg";
 
 const HeaderNavBar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
