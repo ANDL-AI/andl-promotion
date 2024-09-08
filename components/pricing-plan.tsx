@@ -59,8 +59,8 @@ const PricingPlan = () => {
   ];
 
   return (
-    <div id="pricing" className="w-full bg-gray-900 flex flex-col xl:flex-row xl:justify-center items-center py-16 space-y-8 xl:space-y-0 xl:space-x-8">
-      {pricingPlans.map((plan, index) => (
+<div id="pricing" className="items-center w-full bg-gray-900 flex flex-col xl-plus:flex-row xl-plus:justify-center py-16 px-4 xl-plus:px-16 space-y-8 xl-plus:space-y-0 xl-plus:space-x-8">
+{pricingPlans.map((plan, index) => (
         <div key={index} className="hover:bg-gray-700 transition duration-300 w-full max-w-md bg-gray-800 text-gray-100 rounded-xl shadow-2xl flex flex-col h-full relative">
           {/* Conditional Badge for Recommended Plan */}
           {plan.recommended && (
@@ -74,11 +74,11 @@ const PricingPlan = () => {
           </div>
           
           <div className="p-8 flex-grow space-y-6">
-            <p className="text-gray-300 min-w-[400px]">{plan.description}</p>
-            <p className="text-gray-400 italic min-w-[300px]">{plan.fineTuning}</p>
+            <p className="text-gray-300 xl-plus:min-w-[400px]">{plan.description}</p>
+            <p className="text-gray-400 italic xl-plus:min-w-[400px]">{plan.fineTuning}</p>
             <ul className="space-y-4">
               {plan.features.map((feature, i) => (
-                <li key={i} className="flex items-center min-w-[400px]">
+                <li key={i} className="flex items-center xl-plus:min-w-[400px]">
                   <Check className="text-indigo-400 mr-3" size={20} />
                   <p>{feature}</p>
                 </li>

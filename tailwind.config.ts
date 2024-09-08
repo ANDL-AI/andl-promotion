@@ -30,7 +30,10 @@ const config: Config = {
       },
       animation: {
         scroll: 'scroll 30s linear infinite',
-      }
+      },
+      screens: {
+        'xl-plus': '1380px', // xl + 100px
+      },
     },
   },
   plugins: [],
