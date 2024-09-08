@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from 'react';
 
 const Waitlist: React.FC = () => {
@@ -7,13 +8,11 @@ const Waitlist: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Create and append a hidden iframe to the document
     const iframe = document.createElement('iframe');
     iframe.style.display = 'none';
     iframe.name = 'hidden_iframe';
     document.body.appendChild(iframe);
 
-    // Clean up iframe on component unmount
     return () => {
       document.body.removeChild(iframe);
     };
@@ -22,7 +21,6 @@ const Waitlist: React.FC = () => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    // Simple validation
     if (!email) {
       setError('Please enter your email.');
       return;
@@ -32,20 +30,16 @@ const Waitlist: React.FC = () => {
       return;
     }
 
-    // Generate the Google Form URL with the email pre-filled
     const googleFormUrl = `https://docs.google.com/forms/d/e/1FAIpQLScRkwY198g2ho75hz1RMYRBKHVBRn4c39VWMd3Ir9hZokzw8g/formResponse?usp=pp_url&entry.424576630=${encodeURIComponent(email)}`;
 
-    // Create a form element and submit it via the hidden iframe
     const form = document.createElement('form');
     form.action = googleFormUrl;
     form.method = 'POST';
     form.target = 'hidden_iframe';
 
-    // Append the form to the body and submit it
     document.body.appendChild(form);
     form.submit();
 
-    // Reset email field and state
     setEmail('');
     setSubmitted(true);
     setError(null);
@@ -57,35 +51,36 @@ const Waitlist: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-hs-background py-4 px-6"
-    id='waitlist'>
-      <div className="max-w-md w-full">
-        <h2 className="text-2xl font-semibold mb-4 text-hs-secondary text-center">Join Our Waitlist</h2>
-        {submitted ? (
-          <div className="text-hs-text text-center">
-            <p>Thank you for joining the waitlist! We will contact you soon.</p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="bg-hs-base p-6 rounded-lg shadow-lg">
-            <label htmlFor="email" className="block text-lg font-medium text-hs-secondary mb-2">Email Address</label>
+    <div className="w-full max-w-lg bg-gray-800 p-8 rounded-xl shadow-2xl hover:bg-gray-700 transition duration-300">
+      <h2 className="text-3xl font-bold mb-6 text-indigo-400 text-center">Join Our Waitlist</h2>
+      <span className='text-xl text-center border-b border-gray-700'>Still in the kitchen, in progress... Join the waitlist to be the first to access and try ANDL.</span>
+      {submitted ? (
+        <div className="text-gray-300 text-center">
+          <p className="text-lg pt-8">Thank you for joining the waitlist!</p>
+          <p className="mt-2">We'll contact you soon with more information.</p>
+        </div>
+      ) : (
+        <form id='waitlist' onSubmit={handleSubmit} className="space-y-4 pt-8">
+          <div>
+            <label htmlFor="email" className="block text-lg font-medium text-gray-300 mb-2 mt-4">Email Address</label>
             <input
               type="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-3 border border-hs-third rounded-lg mb-4"
+              className="w-full p-4 border border-gray-600 bg-gray-700 text-gray-100 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               placeholder="Enter your email"
             />
-            {error && <p className="text-red-500 mb-4">{error}</p>}
-            <button
-              type="submit"
-              className="w-full bg-hs-third text-hs-base py-2 rounded-lg hover:bg-hs-fourth transition duration-300"
-            >
-              Join Waitlist
-            </button>
-          </form>
-        )}
-      </div>
+          </div>
+          {error && <p className="text-red-400 text-sm">{error}</p>}
+          <button
+            type="submit"
+            className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition duration-300 font-semibold text-lg"
+          >
+            Join Waitlist
+          </button>
+        </form>
+      )}
     </div>
   );
 };

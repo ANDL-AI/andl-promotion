@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: CC Attribution. Made by wishforge.games: https://www.wishforge.games/ -->
+<svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 33 32" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.text-a-plus { font-family: 'Arial', sans-serif; font-size: 18px; fill: #FFFFFF; font-weight: normal; }
+	.text-ndl { font-family: 'Arial', sans-serif; font-size: 20px; fill: #FFFFFF; font-weight: normal; }
+  .text-plus { font-family: 'Arial', sans-serif; font-size: 10px; fill: #FFFFFF; font-weight: bold; }
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<path class="st0" d="M27,29H7c-1.1,0-2-0.9-2-2v0c0-1.1,0.9-2,2-2h20l0-22H8C6.3,3,5,4.3,5,6v21"/>
+<text x="10" y="22" class="text-a-plus">A</text>
+<text x="18" y="12" class="text-plus">+</text>
+<!-- Underline -->
+</svg>
