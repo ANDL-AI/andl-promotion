@@ -17,9 +17,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/andl_white_color_black_bg_logo_only.svg" type="image/svg+xml" />
-      </Head>
       <body className={inter.className}>{children}</body>
     </html>
   );
