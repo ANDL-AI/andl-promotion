@@ -13,18 +13,27 @@ export default function Home() {
       <AuthorizedLayout>
         <div className="flex flex-col items-center justify-center space-y-12 pt-12 px-8 max-w-2xl">
           <Paragraph
-            title="Exploring New Horizons"
-            text="Discover innovative solutions and groundbreaking research in the field of technology. Our platform is dedicated to providing the latest advancements and insights to help you stay ahead of the curve."
-            side="left"
-          />
-          <Paragraph
-            title="Empowering Education"
-            text="Join us in transforming the educational landscape. Our tools and resources are designed to enhance learning experiences, making education more accessible and engaging for everyone."
+            title="What is the Problem?"
+            text="Although use of AI widespread now, there is little to no regulations when it comes to education side of things. 
+            
+            Students make use of it to naively get answers for their questions and assignments. 
+            As a result, we see the misuse of and the inability to appropriately utilize AI, not 100% depend on it. 
+            
+            This can lead to a lack of understanding of the subject matter and a lack of critical thinking skills. Moreover, educational institutions have not yet been able to define proper guidelines for the use of AI in education and are unsure how they should govern/monitor the use of AI in their institutions."
             side="right"
           />
           <Paragraph
-            title="Building a Better Future"
-            text="We are committed to creating a positive impact through our initiatives. By collaborating with leading experts and organizations, we aim to address critical challenges and drive progress in our community."
+            title="What is ANDL?"
+            text="ANDL is an StackOverflow-like AI platform targeting universities, students, TAs, and professors. We offer a way for students to work with course-level fine-tuned LLM with many AI-assistance elements to help them make educated decisions,
+            an easy way for them to reinforce those models with their (as well as TAs' and professors') inputs, and a way for universities to monitor and control the flow of this whole process. 
+            
+            We offer these services but are not limited to them. So for more details, please sign up for the waitlist."
+            side="left"
+          />
+          <Paragraph
+            title="Why do WE solve it?"
+            text="We've seen numerous times AI failing to properly tackle questions regarding our college studies. Even if it did, especially in more complex problems, we could not be sure of the answer as it does not provide any rationale or confidence.
+            We've seen ChatGPT say 2 + 2 = 5 or the word strawberry has 2 r in it. In a high-stake domain like education, we do not want these absurdities further hinder global education."
             side="left"
           />
         </div>

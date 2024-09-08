@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'; // Make sure to import Image
+import Logo from "@/public/andl_new_white.svg";
 
 const HeaderNavBar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -15,12 +17,10 @@ const HeaderNavBar = () => {
     };
 
     const handleWaitlist = () => {
-        // Scroll to the waitlist element on the home page
         const waitlistElement = document.getElementById('waitlist');
         if (waitlistElement) {
             waitlistElement.scrollIntoView({ behavior: 'smooth' });
         } else {
-            // If the element is not found, you might want to handle this case
             console.error('Element with id "waitlist" not found');
         }
     };
@@ -29,10 +29,10 @@ const HeaderNavBar = () => {
         <header className="bg-hs-secondary text-hs-base px-2 py-4 md:p-4 flex justify-between items-center shadow-lg fixed top-0 w-full z-50">
             <div className="flex items-center space-x-4 flex-grow">
                 <button
-                    className="transition ease-in-out duration-300 hover:text-hs-third text-hs-base text-md md:text-2xl ml-0 md:ml-4"
+                    className="transition ease-in-out duration-300 hover:text-hs-third background-hs-base text-md md:text-2xl ml-0 md:ml-4"
                     onClick={handleHome}
                 >
-                    Andl
+                    <Image src={Logo} alt="Logo" width={150} height={150} className="object-contain" />
                 </button>
             </div>
             <nav className="flex items-center space-x-4 ml-auto">
