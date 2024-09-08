@@ -4,7 +4,7 @@ import React from 'react';
 
 const ContactInfo: React.FC = () => {
   return (
-    <div id='contact' className="w-full max-w-lg bg-gray-800 p-8 rounded-xl shadow-2xl flex flex-col justify-start ">
+    <div id='contact' className="w-full max-w-lg bg-gray-800 p-8 rounded-xl shadow-2xl flex flex-col justify-start">
       <h2 className="text-4xl font-bold mb-6 text-indigo-400 text-center">Contact Us</h2>
       <div className="space-y-4">
         <div>

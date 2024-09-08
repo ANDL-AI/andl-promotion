@@ -34,14 +34,15 @@ export default function Home() {
           <Pricing />
         </section>
 
-        <section className="flex flex-col lg:flex-row lg:justify-center lg:space-x-4 space-y-16 lg:space-y-0 items-stretch lg:items-stretch w-full max-w-7xl mx-auto">
-          <div className="w-full lg:w-1/2 flex-grow flex items-stretch">
+        <section className="flex flex-col lg:flex-row justify-center lg:space-x-4 space-y-16 lg:space-y-0 lg:items-stretch items-center w-full max-w-7xl mx-auto">
+          <div className="w-full lg:w-1/2 flex justify-center">
             <Waitlist />
           </div>
-          <div className="w-full lg:w-1/2 flex-grow flex items-stretch">
+          <div className="w-full lg:w-1/2 flex justify-center">
             <ContactForm />
           </div>
         </section>
+
 
       </div>
 
