@@ -3,10 +3,10 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-hs-background text-hs-base py-4 w-full">
+    <footer className="bg-gray-950 text-hs-base py-4 w-full">
       <div className="container mx-auto flex justify-center items-center p-4">
         <div className="text-sm mr-16 text-hs-base">
-          All rights reserved, &copy; 2024 Andl. 
+          All rights reserved, &copy; 2024 ANDL. 
         </div>
         <div className="flex space-x-4">
           <a

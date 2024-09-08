@@ -51,9 +51,9 @@ const Waitlist: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-lg bg-gray-800 p-8 rounded-xl shadow-2xl hover:bg-gray-700 transition duration-300">
+    <div className="w-full max-w-lg bg-gray-800 p-8 rounded-xl shadow-2xl ">
       <h2 className="text-3xl font-bold mb-6 text-indigo-400 text-center">Join Our Waitlist</h2>
-      <span className='text-xl text-center border-b border-gray-700'>Still in the kitchen, in progress... Join the waitlist to be the first to access and try ANDL.</span>
+      <span className='text-xl text-center border-gray-700'>Still in the kitchen, in progress... Join the waitlist to be the first to access and try ANDL.</span>
       {submitted ? (
         <div className="text-gray-300 text-center">
           <p className="text-lg pt-8">Thank you for joining the waitlist!</p>

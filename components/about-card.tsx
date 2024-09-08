@@ -13,35 +13,34 @@ interface Person {
 
 const people: Person[] = [
   {
-    input: `Computer Science and Engineering senior @ TU Delft. 
+    input: `CS @ TU Delft. 
 Previously worked in data science for 3 years.`,
     name: 'Atilla Colak',
-    role: 'Co-founder and developer',
+    role: 'Co-founder and Developer',
     image: 'https://media.licdn.com/dms/image/v2/C4E03AQHc4JQQ50ptow/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1609161991588?e=1730937600&v=beta&t=GbWS4m6HOQBAmh9x85iRTwEv0fr8b4gz8QhJWchcE-w',
     linkedin: 'https://www.linkedin.com/in/atilla-colak/',
     github: "https://github.com/AtillaColak"
   },
   {
-    input: `Worked as a Software Developer at PwC.
-Research Interests: NLP, Human-Computer Interaction, Data Mining, and ML.`,
+    input: `Ex-PwC Software Developer. HCI & AI Researcher.`,
     name: "Sagar Chethan Kumar",
-    role: "Co-founder and AI developer", 
+    role: "Co-founder and AI Developer", 
     image: "https://media.licdn.com/dms/image/v2/D4E03AQFVA2vH-cDXpQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704072652393?e=1730937600&v=beta&t=XXFNEoqQbBMU-XhkETj4cdttdDci55dICz_OmnKENO0",
     linkedin: "https://www.linkedin.com/in/sagar-chethan-kumar/",
     github: "https://github.com/Sagar-CK"
   },
   {
-    input: "Ex Software Developer at Tesla.", 
+    input: "Ex-Tesla Software Developer.", 
     name: "Neel Lodha", 
-    role: "Co-founder and developer", 
+    role: "Co-founder and Developer", 
     image: "https://media.licdn.com/dms/image/v2/D4E03AQEh6KfMJpXjRA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714233672794?e=1730937600&v=beta&t=O4ama9vmfxPyQuIPmTB5V5ttXjeyhiRD_F1krpZpnWg", 
     linkedin: "https://www.linkedin.com/in/neel-lodha/",
     github: "https://github.com/Idkwhoami42"
   }, 
   { 
-    input: "Computer Science and honors student @ TU Delft.", 
+    input: "Honors CS @ TU Delft.", 
     name: "Manu Gautam", 
-    role: "Co-founder and AI developer", 
+    role: "Co-founder and AI Developer", 
     image: "https://media.licdn.com/dms/image/v2/D5603AQEa6AKMMUNS-g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695722114136?e=1730937600&v=beta&t=euQY6979D1ax2j6Yf7_rUf3AYKd777UIpp2r0eZ2xTY", 
     linkedin: "https://www.linkedin.com/in/manu-gautam-6b5064259/",
     github: "https://github.com/manugautam04"
@@ -55,6 +54,13 @@ const AboutUs: React.FC = () => {
       <h1 className="text-4xl md:text-5xl font-bold mb-12 mt-16 lg:mt-0 text-center text-indigo-400">
         About Us
       </h1>
+      <div className="text-lg text-gray-200 mb-12 text-center">
+        <h1 className="text-2xl font-bold text-indigo-400">Fun Fact 💡</h1>
+        <p className='mt-8'>
+          ANDL was initially conceived as a winning hackathon project at the <a href="https://vu.nl/en" className="hover:text-indigo-400 transition duration-300 text-gray-400 border-b border-gray-700">Vrije Universiteit Amsterdam</a> in our second year of university.
+          Now, little over a year later, the idea evolved into a full-fledged startup with a full-time team of 4 co-founders.
+        </p>
+      </div>
       <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-8">
         {people.map((person, index) => (
           <div

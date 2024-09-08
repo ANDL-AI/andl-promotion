@@ -14,16 +14,16 @@ export default function Home() {
       <HeaderNavBar />
       <div className="container mx-auto px-4 py-8">
         <section className="mb-16">
-          <h1 className="text-4xl font-bold text-center mb-8 mt-16 text-indigo-400">Welcome to ANDL</h1>
+          <h1 className="text-4xl font-bold text-center mb-8 mt-20 text-indigo-400">Welcome to ANDL!</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Paragraph
-              title="What is the Problem?"
-              text="Although use of AI is widespread now, there is little to no regulation when it comes to education. Students often naively use AI to get answers for their questions and assignments, leading to a lack of understanding and critical thinking skills. Educational institutions struggle to define proper guidelines for AI use."
+              title="What is the Problem? 📚"
+              text="Although use of AI is widespread now, there is little to no regulation when it comes to education. Students often naively use AI to get (biased) answers for their questions and assignments, leading to a lack of understanding and critical thinking skills. Educational institutions struggle to define proper guidelines for AI use."
               side="left"
             />
             <Paragraph
-              title="What is ANDL?"
-              text="ANDL is a StackOverflow-like AI platform targeting universities, students, TAs, and professors. We offer a way for students to work with course-level fine-tuned LLM with AI-assistance elements to help them make educated decisions, while allowing institutions to monitor and control the process."
+              title="What is ANDL? 🚀"
+              text="AI-Nspired Digital Learning, also known as ANDL, is a StackOverflow-like AI platform targeting universities, students, TAs, and professors. We offer a way for students to work with course-level fine-tuned LLM with AI-assistance elements to help them make informed decisions, while allowing institutions to monitor and control the process."
               side="right"
             />
           </div>

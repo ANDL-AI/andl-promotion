@@ -60,7 +60,7 @@ const HeaderNavBar = () => {
     };
 
     return (
-        <header className="bg-hs-background text-hs-base px-2 py-4 md:p-4 flex justify-between items-center shadow-lg fixed top-0 w-full z-50 border-b border-gray-700">
+        <header className="bg-gray-950 text-hs-base px-2 py-4 md:p-4 flex justify-between items-center shadow-lg fixed top-0 w-full z-50 border-b border-gray-700">
             <div className="flex items-center space-x-4 flex-grow">
                 <button
                     className="transition ease-in-out duration-300 hover:text-hs-third background-hs-base text-md md:text-2xl ml-0 md:ml-4"

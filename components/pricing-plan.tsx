@@ -35,7 +35,7 @@ const PricingPlan = () => {
       features: [
         "Support up to 50 concurrent requests",
         "Advanced analytics",
-        "fine-tuning with up to 5GB of data per course",
+        "Fine-tuning with up to 5GB of data per course",
         "Response elements like bias and rationale",
         "Custom domains and platform access",
       ],
@@ -50,7 +50,7 @@ const PricingPlan = () => {
       features: [
         "Support up to 100 concurrent requests",
         "Full advanced analytics and reporting",
-        "fine-tuning with up to 10GB of data per course",
+        "Fine-tuning with up to 10GB of data per course",
         "Response elements like bias and rationale",
         "Custom domains and platform access",
       ],
