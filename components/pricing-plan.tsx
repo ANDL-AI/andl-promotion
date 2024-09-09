@@ -15,7 +15,7 @@ const PricingPlan = () => {
   const pricingPlans = [
     {
       title: "ANDL Basic Plan",
-      price: "1000$",
+      price: "...$",
       description:
         "Includes limited concurrent request handling as well as AI-response elements (bias, confidence, rationale, etc.).",
       features: [
@@ -29,7 +29,7 @@ const PricingPlan = () => {
     },
     {
       title: "ANDL Plus Plan",
-      price: "2000$",
+      price: "...$",
       description:
         "Includes school-level fine-tuning for up to 5 courses and better concurrent request handling. This also grants access to the platform.",
       features: [
@@ -44,7 +44,7 @@ const PricingPlan = () => {
     },
     {
       title: "ANDL Pro Plan",
-      price: "5000$",
+      price: "...$",
       description:
         "Includes major-level fine-tuned LLMs with additional benefits such as AI-response elements (bias, confidence, rationale, etc.), and unlimited request handling.",
       features: [

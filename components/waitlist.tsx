@@ -24,9 +24,9 @@ const Waitlist: React.FC = () => {
     fetchEnrolledCount();
   }, []);
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-
+  
     if (!email) {
       setError('Please enter your email.');
       return;
@@ -35,22 +35,30 @@ const Waitlist: React.FC = () => {
       setError('Please enter a valid email address.');
       return;
     }
-
-    const googleFormUrl = `https://docs.google.com/forms/d/e/1FAIpQLScRkwY198g2ho75hz1RMYRBKHVBRn4c39VWMd3Ir9hZokzw8g/formResponse?usp=pp_url&entry.424576630=${encodeURIComponent(email)}`;
-
-    const form = document.createElement('form');
-    form.action = googleFormUrl;
-    form.method = 'POST';
-    form.target = 'hidden_iframe';
-
-    document.body.appendChild(form);
-    form.submit();
-
-    setEmail('');
-    setSubmitted(true);
-    setError(null);
+  
+    // Prepare the form data
+    const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScRkwY198g2ho75hz1RMYRBKHVBRn4c39VWMd3Ir9hZokzw8g/formResponse';
+    const formData = new FormData();
+    formData.append('entry.424576630', email);
+  
+    try {
+      // Submit the form data using fetch
+      await fetch(googleFormUrl, {
+        method: 'POST',
+        mode: 'no-cors', // This is important because Google Forms does not support CORS
+        body: formData,
+      });
+  
+      // On success, reset the email input and show success message
+      setEmail('');
+      setSubmitted(true);
+      setError(null);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setError('An error occurred while submitting the form. Please try again.');
+    }
   };
-
+  
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);

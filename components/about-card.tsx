@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { CiGlobe } from "react-icons/ci";
 
 interface Person {
   input: string;
@@ -9,6 +10,7 @@ interface Person {
   image: string;
   linkedin?: string;
   github?: string;
+  personalSite?: string;
 }
 
 const people: Person[] = [
@@ -19,7 +21,8 @@ Previously worked in data science for 3 years.`,
     role: 'Co-founder and Developer',
     image: 'https://media.licdn.com/dms/image/v2/C4E03AQHc4JQQ50ptow/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1609161991588?e=1730937600&v=beta&t=GbWS4m6HOQBAmh9x85iRTwEv0fr8b4gz8QhJWchcE-w',
     linkedin: 'https://www.linkedin.com/in/atilla-colak/',
-    github: "https://github.com/AtillaColak"
+    github: "https://github.com/AtillaColak",
+    personalSite: "https://atillas.co/"
   },
   {
     input: `Ex-PwC Software Developer. HCI & AI Researcher.`,
@@ -100,6 +103,16 @@ const AboutUs: React.FC = () => {
                   className="text-hs-third hover:text-hs-fourth transition duration-300"
                 >
                   <FaGithub size={28} />
+                </a>      
+              )}
+              {person.personalSite && (
+                <a
+                  href={person.personalSite}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-hs-third hover:text-hs-fourth transition duration-300"
+                >
+                  <CiGlobe size={28} />
                 </a>      
               )}
             </div>
