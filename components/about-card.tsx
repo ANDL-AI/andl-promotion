@@ -33,7 +33,7 @@ Previously worked in data science for 3 years.`,
     github: "https://github.com/Sagar-CK"
   },
   {
-    input: "Ex-Tesla Software Developer.", 
+    input: "Full-Stack dev & CS @ TU Delft.", 
     name: "Neel Lodha", 
     role: "Co-founder and Developer", 
     image: "https://media.licdn.com/dms/image/v2/D4E03AQEh6KfMJpXjRA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714233672794?e=1730937600&v=beta&t=O4ama9vmfxPyQuIPmTB5V5ttXjeyhiRD_F1krpZpnWg", 
