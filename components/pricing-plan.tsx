@@ -31,11 +31,11 @@ const PricingPlan = () => {
       title: "ANDL Plus Plan",
       price: "...$",
       description:
-        "Includes school-level fine-tuning for up to 5 courses and better concurrent request handling. This also grants access to the platform.",
+        "Includes fine-tuning for up to 5 courses and better concurrent request handling. This also grants access to the platform.",
       features: [
         "Support up to 50 concurrent requests",
         "Advanced analytics",
-        "Fine-tuning with up to 5GB of data per course",
+        "Fine-tuning with 5GB of your material",
         "Response elements like bias and rationale",
         "Custom domains and platform access",
       ],
@@ -50,7 +50,7 @@ const PricingPlan = () => {
       features: [
         "Support up to 100 concurrent requests",
         "Full advanced analytics and reporting",
-        "Fine-tuning with up to 10GB of data per course",
+        "Fine-tuning with 10GB of your material",
         "Response elements like bias and rationale",
         "Custom domains and platform access",
       ],
@@ -59,42 +59,41 @@ const PricingPlan = () => {
   ];
 
   return (
-<div id="pricing" className="items-center w-full bg-gray-900 flex flex-col xl-plus:flex-row xl-plus:justify-center py-16 px-4 xl-plus:px-16 space-y-8 xl-plus:space-y-0 xl-plus:space-x-8">
-{pricingPlans.map((plan, index) => (
-        <div key={index} className="hover:bg-gray-700 transition duration-300 w-full max-w-md bg-gray-800 text-gray-100 rounded-xl shadow-2xl flex flex-col h-full relative">
-          {/* Conditional Badge for Recommended Plan */}
-          {plan.recommended && (
-            <div className="absolute top-0 right-0 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-bl-lg">
-              Recommended
-            </div>
-          )}
-          <div className="bg-indigo-600 p-8 text-center">
-            <h2 className="text-3xl font-bold mb-2">{plan.title}</h2>
-            <p className="text-5xl font-bold mb-2">{plan.price}<span className="text-xl">/yr</span></p>
-          </div>
-          
-          <div className="p-8 flex-grow space-y-6">
-            <p className="text-gray-300 xl-plus:min-w-[400px]">{plan.description}</p>
-            <p className="text-gray-400 italic xl-plus:min-w-[400px]">{plan.fineTuning}</p>
-            <ul className="space-y-4">
-              {plan.features.map((feature, i) => (
-                <li key={i} className="flex items-center xl-plus:min-w-[400px]">
-                  <Check className="text-indigo-400 mr-3" size={20} />
-                  <p>{feature}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Add mt-auto to push button to the bottom */}
-          <div className="p-8 mt-auto">
-            <button onClick={handleWaitlist} className="w-full bg-indigo-500 text-white font-semibold py-4 rounded-lg hover:bg-indigo-600 transition-colors duration-300 text-lg">
-              Contact Us
-            </button>
-          </div>
+<div id="pricing" className="items-center w-full bg-gray-900 flex flex-col xl-plus:flex-row xl-plus:justify-center py-12 px-3 xl-plus:px-10 space-y-6 xl-plus:space-y-0 xl-plus:space-x-6">
+  {pricingPlans.map((plan, index) => (
+    <div key={index} className="hover:bg-gray-700 transition duration-300 w-full max-w-sm bg-gray-800 text-gray-100 rounded-lg shadow-lg flex flex-col h-full relative">
+      {/* Conditional Badge for Recommended Plan */}
+      {plan.recommended && (
+        <div className="absolute top-0 right-0 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-bl-lg">
+          Recommended
         </div>
-      ))}
+      )}
+      <div className="bg-indigo-600 p-6 text-center">
+        <h2 className="text-3xl font-bold mb-2">{plan.title}</h2>
+        <p className="text-5xl font-bold mb-2">{plan.price}<span className="text-xl">/yr</span></p>
+      </div>
+
+      <div className="p-6 flex-grow space-y-4">
+        <p className="text-gray-300 xl-plus:min-w-[350px]">{plan.description}</p>
+        <p className="text-gray-400 italic xl-plus:min-w-[350px]">{plan.fineTuning}</p>
+        <ul className="space-y-3">
+          {plan.features.map((feature, i) => (
+            <li key={i} className="flex items-center xl-plus:min-w-[350px]">
+              <Check className="text-indigo-400 mr-2" size={20} />
+              <p>{feature}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="p-6 mt-auto">
+        <button onClick={handleWaitlist} className="w-full bg-indigo-500 text-white font-semibold py-3 rounded-md hover:bg-indigo-600 transition-colors duration-300 text-lg">
+          Contact Us
+        </button>
+      </div>
     </div>
+  ))}
+</div>
   );
 };
 

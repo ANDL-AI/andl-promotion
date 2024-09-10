@@ -32,7 +32,7 @@ const config: Config = {
         scroll: 'scroll 30s linear infinite',
       },
       screens: {
-        'xl-plus': '1380px', // xl + 100px
+        'xl-plus': '1180px', // xl + 100px
       },
     },
   },
