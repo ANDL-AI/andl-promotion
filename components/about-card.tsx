@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react'
 import Image from 'next/image'
 import { Linkedin, Github, Globe } from 'lucide-react'
@@ -55,14 +53,14 @@ export default function AboutUs() {
   return (
     <section id="about" className="flex flex-col items-center justify-center w-full h-full px-4 bg-gradient-to-br from-white to-[#AF95E2]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-lg text-gray-700 mb-12 text-center">
+        <div className="text-lg text-gray-700 mb-12 text-center mt-32 my-4 lg:my-8">
           <h3 className="text-2xl font-bold text-[#6321E6] mb-4">Fun Fact 💡</h3>
           <p className="max-w-3xl mx-auto">
             ANDL was initially conceived as a winning hackathon project at the <a href="https://vu.nl/en" className="text-[#6321E6] hover:underline transition duration-300">Vrije Universiteit Amsterdam</a> in our second year of university.
             Now, little over a year later, the idea evolved into a full-fledged startup with a full-time team of 4 co-founders.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 pb-12 md:pt-12 md:pb-24">
           {people.map((person, index) => (
             <div
               key={index}

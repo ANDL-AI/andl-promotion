@@ -33,7 +33,7 @@ export default function Features() {
   );
 }
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({ icon, title, description }: {icon: any, title: any, description: any}) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <div className="w-12 h-12 bg-[#AF95E2] rounded-full mb-4 flex items-center justify-center">

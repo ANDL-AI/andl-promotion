@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
 export default function FAQ() {
-  const [openFAQ, setOpenFAQ] = useState(null)
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index)
   }
 
@@ -41,10 +41,10 @@ export default function FAQ() {
             </div>
             <div
               className={`mt-4 overflow-hidden transition-all duration-300 ease-in-out ${
-                openFAQ === index ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+                openFAQ === index ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <p className="text-gray-600">{faq.answer}</p>
+              <p className="text-gray-600 pb-4">{faq.answer}</p>
             </div>
           </div>
         ))}
