@@ -11,8 +11,8 @@ export default function Pricing() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <PricingCard
           title="Academic Plan"
-          price="$..."
-          period="/month/user"
+          price="Contact for further specification"
+          period=""
           features={[
             "Access to course-specific AI models",
             "Real-time analytics and insights",
@@ -24,8 +24,8 @@ export default function Pricing() {
         />
         <PricingCard
           title="Individual Learner Plan"
-          price="$..."
-          period="/month"
+          price="Join the Waitlist for further updates."
+          period=""
           features={[
             "Course-specific AI responses",
             "Bias, confidence, and rationale explanations",
@@ -45,7 +45,7 @@ function PricingCard({ title, price, period, features, buttonText, onButtonClick
     <div className="bg-white text-[#00171f] p-8 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl flex flex-col">
       <div className="flex-grow">
         <h3 className="text-2xl font-bold mb-4">{title}</h3>
-        <p className="text-3xl font-bold mb-4">
+        <p className="text-1xl font-semibold mb-4">
           {price} {period && <span className="text-sm font-normal">{period}</span>}
         </p>
         <ul className="mb-8">

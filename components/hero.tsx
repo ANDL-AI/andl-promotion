@@ -17,18 +17,6 @@ export default function HeroAndDemo() {
           Book a demo →
         </a>
       </div>
-
-      <div className="text-center mb-8">
-      <h2 id="demo" className="relative z-10 text-3xl font-bold">
-        See ANDL in Action
-      </h2>
-      <div className="mx-auto">
-        <p id="demo-text">
-          Demo will be available soon
-          <span id="dots" className="animate-dots"></span>
-        </p>
-      </div>
-    </div>
     </section>
   )
 }
