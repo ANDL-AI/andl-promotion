@@ -62,7 +62,6 @@ export default function Header({ scrollToSection }: {scrollToSection: any}) {
                 }`}
               >
                 <a onClick={() => scrollToSection('hero')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Home</a>
-                <a onClick={() => scrollToSection('demo')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Demo</a>
                 <a onClick={() => scrollToSection('features')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Features</a>
                 <a onClick={() => scrollToSection('pricing')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Pricing</a>
                 <a onClick={() => scrollToSection('faq')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">FAQ</a>
