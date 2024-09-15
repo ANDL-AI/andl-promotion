@@ -14,10 +14,10 @@ export default function Pricing() {
           price="Contact us for a quota."
           period=""
           features={[
-            "Access to course-specific AI models",
-            "Real-time analytics and insights",
-            "Community platform access",
-            "Support for integrating into university systems"
+            "AI Models Tailored to Individual Courses",
+            "Real-Time Student-AI Analytics",
+            "Learner Community Platform",
+            "Initial Integration Support"
           ]}
           buttonText="Contact Us"
           onButtonClick={() => scrollToSection('#hero')}
@@ -27,10 +27,10 @@ export default function Pricing() {
           price="Join the waitlist for further updates."
           period=""
           features={[
-            "Course-specific AI responses",
-            "Bias, confidence, and rationale explanations",
-            "Access to collaborative learning platform",
-            "Community-driven support"
+            "Domain-specific AI Models",
+            "Real-Time AI-Driven Prompt Analytics",
+            "Learner Community Platform",
+            "Live Community Support"
           ]}
           buttonText="Join Waitlist"
           onButtonClick={() => scrollToSection('#waitlist')}

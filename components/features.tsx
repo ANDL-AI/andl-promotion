@@ -5,13 +5,13 @@ export default function Features() {
   return (
     <section id="features" className="px-4 py-16 bg-white bg-opacity-80">
       <h2 className="text-2xl font-bold text-center mb-12">
-        Empowering Education with ANDL's Advanced AI Solutions
+        Empowering Education with ANDL's Responsible and Explainable AI Solutions
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
         <FeatureCard
           icon={<HandHelping className="w-6 h-6 text-white" />}
           title="Comprehensive Response Assistance"
-          description="ANDL provides detailed assistance elements like rationale, counterfactuals, bias, and confidence alongside each response, ensuring a deeper understanding of the AI’s outputs."
+          description="ANDL provides detailed clarity metrics like rationale, counterfactuals, bias, and confidence alongside each response, ensuring a deeper understanding of the AI’s outputs."
         />
         <FeatureCard
           icon={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-white">
