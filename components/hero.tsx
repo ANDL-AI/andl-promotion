@@ -7,7 +7,7 @@ export default function HeroAndDemo() {
       <h1 className="text-4xl font-bold mb-4">
         <span className="text-[#AF95E2]">Responsible</span> and 
         <br />
-        <span className="text-[#6321E6]">Explainable</span> LLM
+        <span className="text-[#6321E6]">Explainable</span> AI
       </h1>
       <p className="mb-8 max-w-2xl mx-auto">
         The new standard in AI for education.
