@@ -62,8 +62,8 @@ export default function Header() {
                 }`}
               >
                 <a href="/#hero" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Home</a>
-                <a href="/#features" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Features</a>
                 <a href="/#demo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Demo</a>
+                <a href="/#features" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Features</a>
                 <a href="/#pricing" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Pricing</a>
                 <a href="/#faq" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">FAQ</a>
                 <a href="/#waitlist" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Join Waitlist</a>
