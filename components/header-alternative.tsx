@@ -8,14 +8,15 @@ import Logo from "@/public/andl_black_color_white_bg.svg"
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
-  const menuRef = useRef(null)
+  const menuRef = useRef<HTMLDivElement>(null) 
+
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY)
     }
 
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: any) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setIsMenuOpen(false)
       }

@@ -9,7 +9,7 @@ import Waitlist from '@/components/waitlist';
 import Footer from '@/components/footer';
 
 export default function Component() {
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: any) => {
     const section = document.getElementById(sectionId)
     if (section) {
       const top = section.getBoundingClientRect().top + window.scrollY; // Calculate the position of the section

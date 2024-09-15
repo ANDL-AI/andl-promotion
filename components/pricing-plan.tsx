@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Pricing() {
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: any) => {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -40,7 +40,7 @@ export default function Pricing() {
   );
 }
 
-function PricingCard({ title, price, period, features, buttonText, onButtonClick }) {
+function PricingCard({ title, price, period, features, buttonText, onButtonClick }: {title: any, price: any, period:any, features:any, buttonText: any, onButtonClick: any}) {
   return (
     <div className="bg-white text-[#00171f] p-8 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl flex flex-col">
       <div className="flex-grow">
@@ -49,7 +49,7 @@ function PricingCard({ title, price, period, features, buttonText, onButtonClick
           {price} {period && <span className="text-sm font-normal">{period}</span>}
         </p>
         <ul className="mb-8">
-          {features.map((feature, index) => (
+          {features.map((feature: any, index: any) => (
             <li key={index} className="flex items-center mb-2">
               <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>

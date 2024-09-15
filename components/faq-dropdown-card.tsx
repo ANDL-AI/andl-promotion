@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react'
 export default function FAQ() {
   const [openFAQ, setOpenFAQ] = useState(null)
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = (index: any) => {
     setOpenFAQ(openFAQ === index ? null : index)
   }
 
