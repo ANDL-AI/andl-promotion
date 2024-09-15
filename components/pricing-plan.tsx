@@ -11,7 +11,7 @@ export default function Pricing() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <PricingCard
           title="Academic Plan"
-          price="Contact for further specification"
+          price="Contact us for a quota."
           period=""
           features={[
             "Access to course-specific AI models",
@@ -24,7 +24,7 @@ export default function Pricing() {
         />
         <PricingCard
           title="Individual Learner Plan"
-          price="Join the Waitlist for further updates."
+          price="Join the waitlist for further updates."
           period=""
           features={[
             "Course-specific AI responses",
