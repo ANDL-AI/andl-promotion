@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react'
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-gray-950 text-hs-base py-4 w-full">
-      <div className="container mx-auto flex justify-center items-center p-4">
-        <div className="text-sm mr-16 text-hs-base">
-          All rights reserved, &copy; 2024 ANDL. 
+    <footer className="px-4 py-8 bg-white">
+      <div className="flex flex-col md:flex-row justify-between items-center max-w-4xl mx-auto">
+        <div className="flex items-center mb-4 md:mb-0">
+          <span className="text-[#00171f] font-bold text-xl">ANDL</span>
         </div>
-        <div className="flex space-x-4">
-          <a
+        <nav className="flex gap-4">
+        <a
             href="https://github.com/ANDL-AI"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-hs-base hover:text-hs-third"
+            className="text-black hover:text-hs-third"
           >
             <FaGithub size={32} />
           </a>
@@ -21,14 +21,15 @@ const Footer = () => {
             href="https://linkedin.com/company/andl-ai"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-hs-base hover:text-hs-third"
+            className="text-black hover:text-hs-third"
           >
             <FaLinkedin size={32} />
           </a>
-        </div>
+        </nav>
+      </div>
+      <div className="text-center mt-8 text-gray-600">
+        © Copyright {new Date().getFullYear()} ANDL. All rights reserved.
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}

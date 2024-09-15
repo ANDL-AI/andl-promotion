@@ -1,56 +1,42 @@
-import Image from "next/image";
-import AuthorizedLayout from "@/components/authorized-layout";
-import Footer from "@/components/footer";
-import TargetCarousel from "@/components/target-carousel";
-import Paragraph from "@/components/paragraph";
-import Waitlist from "@/components/waitlist";
-import HeaderNavBar from "@/components/header";
-import Pricing from "@/components/pricing-plan";
-import ContactForm from "@/components/contact-form";
+"use client";
+import React, { useState, useEffect } from 'react'
+import Header from '@/components/header';
+import HeroAndDemo from '@/components/hero';
+import Features from '@/components/features';
+import Pricing from '@/components/pricing-plan';
+import FAQ from '@/components/faq-dropdown-card';
+import Waitlist from '@/components/waitlist';
+import Footer from '@/components/footer';
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-gray-900 text-gray-100">
-      <HeaderNavBar />
-      <div className="container mx-auto px-4 py-8">
-        <section className="mb-16">
-          <h1 className="text-4xl font-bold text-center mb-8 mt-20 text-indigo-400">Welcome to ANDL!</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Paragraph
-              title="What is the Problem? 📚"
-              text="Although use of AI is widespread now, there is little to no regulation when it comes to education. Students often naively use AI to get (biased) answers for their questions and assignments, leading to a lack of understanding and critical thinking skills. Educational institutions struggle to define proper guidelines for AI use."
-              side="left"
-            />
-            <Paragraph
-              title="What is ANDL? 🚀"
-              text="AI-Nspired Digital Learning, also known as ANDL, is a StackOverflow-like AI platform targeting universities, students, TAs, and professors. We offer a way for students to work with course-level fine-tuned LLM with AI-assistance elements to help them make informed decisions, while allowing institutions to monitor and control the process."
-              side="right"
-            />
-          </div>
-        </section>
+export default function Component() {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId)
+    if (section) {
+      const top = section.getBoundingClientRect().top + window.scrollY; // Calculate the position of the section
+  
+      window.scrollTo({
+        top: top, // Scroll to this position
+        behavior: 'smooth' // Smooth scrolling
+      })
+    }
+  }
   
 
-        <section className="mb-16">
-          <Pricing />
-        </section>
+  return (
+    <div className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white to-[#AF95E2] animate-gradient-x"></div>
 
-        <section className="flex flex-col lg:flex-row justify-center lg:space-x-4 space-y-16 lg:space-y-0 lg:items-stretch items-center w-full max-w-7xl mx-auto">
-          <div className="w-full lg:w-1/2 flex justify-center">
-            <Waitlist />
-          </div>
-          <div className="w-full lg:w-1/2 flex justify-center">
-            <ContactForm />
-          </div>
-        </section>
-
-
+      {/* Content container */}
+      <div className="relative z-10">
+        <Header scrollToSection={scrollToSection} />
+        <HeroAndDemo />
+        <Features />
+        <Pricing />
+        <FAQ />
+        <Waitlist />
+        <Footer />
       </div>
-
-      <section className="bg-gray-800 py-8">
-        <TargetCarousel />
-      </section>
-
-      <Footer />
-    </main>
-  );
+    </div>
+  )
 }

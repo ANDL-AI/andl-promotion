@@ -4,6 +4,32 @@
 
 body {
     overflow-x: hidden;
-    background-color: #030712; /* Black background */
+    background-color: #c8bad5; /* Black background */
 }
+
+/* Dots Animation */
+@keyframes dotsAnimation {
+    0% { content: "."; }
+    33% { content: ".."; }
+    66% { content: "..."; }
+    100% { content: "."; }
+  }
+  
+  .animate-dots::after {
+    content: ".";
+    animation: dotsAnimation 1.5s infinite step-end;
+  }
+  
+  /* Color Changing Animation */
+  @keyframes colorChange {
+    0% { color: #6321E6; } /* hs-third */
+    25% { color: #504BDF; } /* hs-secondary */
+    50% { color: #000000; } /* black */
+    75% { color: #504BDF; } /* hs-secondary */
+    100% { color: #6321E6; } /* hs-third */
+  }
+  
+  #demo {
+    animation: colorChange 5s infinite;
+  }
   

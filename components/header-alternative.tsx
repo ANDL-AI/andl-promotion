@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Logo from "@/public/andl_black_color_white_bg.svg"
 
-export default function Header({ scrollToSection }) {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
   const menuRef = useRef(null)
@@ -42,13 +42,12 @@ export default function Header({ scrollToSection }) {
             <Image src={Logo} alt="Logo" width={150} height={150} className="object-contain cursor-pointer" />
           </Link>
           <div className="flex items-center space-x-4">
-            <Link 
-              onClick={() => scrollToSection('about')} 
-              href="/about"
+            <a 
+              href="#about" 
               className="text-black font-medium cursor-pointer transition-all duration-300 hover:text-[#6321E6] hover:scale-105"
             >
               About Us
-            </Link>
+            </a>
             <div className="relative" ref={menuRef}>
               <button
                 onClick={toggleMenu}
@@ -61,12 +60,12 @@ export default function Header({ scrollToSection }) {
                   isMenuOpen ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform -translate-y-2 pointer-events-none'
                 }`}
               >
-                <a onClick={() => scrollToSection('hero')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Home</a>
-                <a onClick={() => scrollToSection('features')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Features</a>
-                <a onClick={() => scrollToSection('demo')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Demo</a>
-                <a onClick={() => scrollToSection('pricing')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Pricing</a>
-                <a onClick={() => scrollToSection('faq')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">FAQ</a>
-                <a onClick={() => scrollToSection('waitlist')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Join Waitlist</a>
+                <a href="/#hero" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Home</a>
+                <a href="/#features" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Features</a>
+                <a href="/#demo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Demo</a>
+                <a href="/#pricing" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Pricing</a>
+                <a href="/#faq" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">FAQ</a>
+                <a href="/#waitlist" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Join Waitlist</a>
               </nav>
             </div>
           </div>
