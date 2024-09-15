@@ -1,4 +1,5 @@
 import React from 'react';
+import { HandHelping, ChartNetwork } from 'lucide-react';
 
 export default function Features() {
   return (
@@ -8,9 +9,7 @@ export default function Features() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
         <FeatureCard
-          icon={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-white">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2z" />
-          </svg>}
+          icon={<HandHelping className="w-6 h-6 text-white" />}
           title="Comprehensive Response Assistance"
           description="ANDL provides detailed assistance elements like rationale, counterfactuals, bias, and confidence alongside each response, ensuring a deeper understanding of the AI’s outputs."
         />
@@ -22,9 +21,7 @@ export default function Features() {
           description="Our platform encourages interaction through a Stack-like community, where students, professors, and TAs collaborate and share knowledge. Gamification elements reward active participation and contributions."
         />
         <FeatureCard
-          icon={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-white">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v14M5 12h14" />
-          </svg>}
+          icon={<ChartNetwork className="w-6 h-6 text-white" />}
           title="Advanced Analytics for Educators"
           description="Educators and staff get access to detailed analytics through a dedicated dashboard, helping them identify learning gaps, monitor usage, and refine their teaching strategies."
         />
