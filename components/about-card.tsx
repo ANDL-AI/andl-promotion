@@ -14,6 +14,14 @@ interface Person {
 
 const people: Person[] = [
   {
+    input: `Ex-PwC Software Developer. HCI & AI Researcher.`,
+    name: "Sagar Chethan Kumar",
+    role: "Co-founder and AI Developer", 
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQFVA2vH-cDXpQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704072652393?e=1730937600&v=beta&t=XXFNEoqQbBMU-XhkETj4cdttdDci55dICz_OmnKENO0",
+    linkedin: "https://www.linkedin.com/in/sagar-chethan-kumar/",
+    github: "https://github.com/Sagar-CK"
+  },
+  {
     input: `CS @ TU Delft. 
 Previously worked in data science for 3 years.`,
     name: 'Atilla Colak',
@@ -23,13 +31,13 @@ Previously worked in data science for 3 years.`,
     github: "https://github.com/AtillaColak",
     personalSite: "https://atillas.co/"
   },
-  {
-    input: `Ex-PwC Software Developer. HCI & AI Researcher.`,
-    name: "Sagar Chethan Kumar",
+  { 
+    input: "Honors CS @ TU Delft.", 
+    name: "Manu Gautam", 
     role: "Co-founder and AI Developer", 
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQFVA2vH-cDXpQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704072652393?e=1730937600&v=beta&t=XXFNEoqQbBMU-XhkETj4cdttdDci55dICz_OmnKENO0",
-    linkedin: "https://www.linkedin.com/in/sagar-chethan-kumar/",
-    github: "https://github.com/Sagar-CK"
+    image: "https://media.licdn.com/dms/image/v2/D5603AQEa6AKMMUNS-g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695722114136?e=1730937600&v=beta&t=euQY6979D1ax2j6Yf7_rUf3AYKd777UIpp2r0eZ2xTY", 
+    linkedin: "https://www.linkedin.com/in/manu-gautam-6b5064259/",
+    github: "https://github.com/manugautam04"
   },
   {
     input: "Full-Stack dev & CS @ TU Delft.", 
@@ -38,14 +46,6 @@ Previously worked in data science for 3 years.`,
     image: "https://media.licdn.com/dms/image/v2/D4E03AQEh6KfMJpXjRA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714233672794?e=1730937600&v=beta&t=O4ama9vmfxPyQuIPmTB5V5ttXjeyhiRD_F1krpZpnWg", 
     linkedin: "https://www.linkedin.com/in/neel-lodha/",
     github: "https://github.com/Idkwhoami42"
-  }, 
-  { 
-    input: "Honors CS @ TU Delft.", 
-    name: "Manu Gautam", 
-    role: "Co-founder and AI Developer", 
-    image: "https://media.licdn.com/dms/image/v2/D5603AQEa6AKMMUNS-g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695722114136?e=1730937600&v=beta&t=euQY6979D1ax2j6Yf7_rUf3AYKd777UIpp2r0eZ2xTY", 
-    linkedin: "https://www.linkedin.com/in/manu-gautam-6b5064259/",
-    github: "https://github.com/manugautam04"
   }
 ]
 
