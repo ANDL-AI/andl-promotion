@@ -26,7 +26,7 @@ export default function Footer() {
     maxWidth: '400px',
   } : {
     width: '90%',
-    maxWidth: '800px',
+    maxWidth: '1200px',
   }
 
   const contentStyle = isMobile ? {
@@ -198,8 +198,9 @@ export default function Footer() {
         onOk={() => setIsPrivacyOpen(false)}
         onCancel={() => setIsPrivacyOpen(false)}
         style={modalStyle}
-        bodyStyle={{ maxHeight: isMobile ? '60vh' : '70vh', overflowY: 'auto' }}
+        bodyStyle={{ maxHeight: isMobile ? '60vh' : '60vh', overflowY: 'auto' }}
         centered
+        width={isMobile ? '95%' : '40%'} // Add this line to control the width
         footer={null}
       >
         {privacyContent}
@@ -211,8 +212,9 @@ export default function Footer() {
         onOk={() => setIsTermsOpen(false)}
         onCancel={() => setIsTermsOpen(false)}
         style={modalStyle}
-        bodyStyle={{ maxHeight: isMobile ? '60vh' : '70vh', overflowY: 'auto' }}
+        bodyStyle={{ maxHeight: isMobile ? '60vh' : '60vh', overflowY: 'auto' }}
         centered
+        width={isMobile ? '95%' : '40%'} // Add this line to control the width
         footer={null}
       >
         {termsContent}
