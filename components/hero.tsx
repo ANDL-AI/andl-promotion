@@ -4,11 +4,11 @@ import React, { useState, useEffect } from 'react'
 
 const messages = [
   "The new standard in AI for education.",
-  "AI clarity modules for conscious learning.",
+  "Empowering conscious learning with AI clarity modules.",
   "Platform to learn with others and ANDL.", 
-  "Dashboard to track your journey and improve.", 
+  "Track progress, unlock potential, thrive.", 
   "Revolutionizing learning experiences.",
-  "We are ANDL...",
+  "We are ANDL: Your partner in the future of learning.",
   "The future of education!"
 ]
 
