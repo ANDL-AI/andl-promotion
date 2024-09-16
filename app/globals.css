@@ -2,34 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
-    overflow-x: hidden;
-    background-color: #c8bad5; /* Black background */
+  flex-grow: 1;
+  overflow-x: hidden;
+  background-color: #e4ddf0;
+  position: relative;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 500px;
+  z-index: -1;
+}
+
+body::before {
+  top: 0;
+  background: linear-gradient(to bottom right, #ffffff, #AF95E2);
+}
+
+body::after {
+  bottom: 0;
+  background: white;
 }
 
 /* Dots Animation */
 @keyframes dotsAnimation {
-    0% { content: "."; }
-    33% { content: ".."; }
-    66% { content: "..."; }
-    100% { content: "."; }
-  }
-  
-  .animate-dots::after {
-    content: ".";
-    animation: dotsAnimation 1.5s infinite step-end;
-  }
-  
-  /* Color Changing Animation */
-  @keyframes colorChange {
-    0% { color: #6321E6; } /* hs-third */
-    25% { color: #504BDF; } /* hs-secondary */
-    50% { color: #000000; } /* black */
-    75% { color: #504BDF; } /* hs-secondary */
-    100% { color: #6321E6; } /* hs-third */
-  }
-  
-  #demo {
-    animation: colorChange 5s infinite;
-  }
-  
+  0% { content: "."; }
+  33% { content: ".."; }
+  66% { content: "..."; }
+  100% { content: "."; }
+}
+
+.animate-dots::after {
+  content: ".";
+  animation: dotsAnimation 1.5s infinite step-end;
+}
+
+/* Color Changing Animation */
+@keyframes colorChange {
+  0% { color: #6321E6; } /* hs-third */
+  25% { color: #504BDF; } /* hs-secondary */
+  50% { color: #000000; } /* black */
+  75% { color: #504BDF; } /* hs-secondary */
+  100% { color: #6321E6; } /* hs-third */
+}
+
+#demo {
+  animation: colorChange 5s infinite;
+}

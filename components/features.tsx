@@ -1,22 +1,20 @@
-import React from 'react';
-import { HandHelping, ChartNetwork } from 'lucide-react';
+import React from 'react'
+import { HandHelping, ChartNetwork, MessageSquare } from 'lucide-react'
 
 export default function Features() {
   return (
-    <section id="features" className="px-4 py-16 bg-white bg-opacity-80">
-      <h2 className="text-2xl font-bold text-center mb-12">
+    <section id="features" className="px-4 py-12 relative -z-10">
+      <h2 className="text-2xl font-bold text-center mb-8">
         Empowering Education with ANDL's Responsible and Explainable AI Solutions
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
         <FeatureCard
           icon={<HandHelping className="w-6 h-6 text-white" />}
           title="Comprehensive Response Assistance"
-          description="ANDL provides detailed clarity metrics like rationale, counterfactuals, bias, and confidence alongside each response, ensuring a deeper understanding of the AI’s outputs."
+          description="ANDL provides detailed clarity metrics like rationale, counterfactuals, bias, and confidence alongside each response, ensuring a deeper understanding of the AI's outputs."
         />
         <FeatureCard
-          icon={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-white">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-          </svg>}
+          icon={<MessageSquare className="w-6 h-6 text-white" />}
           title="Engaging Community Platform"
           description="Our platform encourages interaction through a Stack-like community, where students, professors, and TAs collaborate and share knowledge. Gamification elements reward active participation and contributions."
         />
@@ -27,17 +25,17 @@ export default function Features() {
         />
       </div>
     </section>
-  );
+  )
 }
 
-function FeatureCard({ icon, title, description }: {icon: any, title: any, description: any}) {
+const FeatureCard = ({ icon, title, description }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-      <div className="w-12 h-12 bg-[#AF95E2] rounded-full mb-4 flex items-center justify-center">
+    <div className="bg-white bg-opacity-80 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 backdrop-blur-sm">
+      <div className="w-12 h-12 bg-gradient-to-br from-[#AF95E2] to-[#6321E6] rounded-xl mb-4 flex items-center justify-center transition-transform duration-300 hover:rotate-3">
         {icon}
       </div>
-      <h3 className="font-semibold mb-2">{title}</h3>
+      <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-sm text-gray-600">{description}</p>
     </div>
-  );
+  )
 }
