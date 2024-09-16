@@ -60,3 +60,26 @@ body::after {
 #demo {
   animation: colorChange 5s infinite;
 }
+.combined-gradient-text {
+  display: inline-block;
+  background: linear-gradient(90deg, #504BDF, #AF95E2, #504BDF);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 3s ease-in-out infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 150% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.and-text {
+  color: black;
+  -webkit-text-fill-color: black;
+  font-weight: bold;
+}
