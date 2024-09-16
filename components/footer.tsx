@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Mail, MapPin } from "lucide-react"
 import { usePathname } from 'next/navigation'
 import { Modal } from 'antd'
@@ -10,20 +10,50 @@ export default function Footer() {
   const isHomePage = pathname === "/"
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false)
   const [isTermsOpen, setIsTermsOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  const modalStyle = isMobile ? {
+    width: '95%',
+    maxWidth: '400px',
+  } : {
+    width: '90%',
+    maxWidth: '800px',
+  }
+
+  const contentStyle = isMobile ? {
+    fontSize: '14px',
+  } : {}
+
+  const headingStyle = isMobile ? {
+    fontSize: '20px',
+  } : {}
+
+  const subheadingStyle = isMobile ? {
+    fontSize: '18px',
+  } : {}
 
   const privacyContent = (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-bold">Privacy Policy</h1>
+    <div className="space-y-6" style={contentStyle}>
+      <h1 className="text-3xl font-bold" style={headingStyle}>Privacy Policy</h1>
       <p className="text-lg">At ANDL, we value your privacy and are committed to protecting your personal information.</p>
       
-      <h2 className="text-2xl font-semibold">1. Information We Collect</h2>
+      <h2 className="text-2xl font-semibold" style={subheadingStyle}>1. Information We Collect</h2>
       <ul className="list-disc pl-6">
         <li>Personal identification information</li>
         <li>Usage data</li>
         <li>Cookies and tracking technologies</li>
       </ul>
   
-      <h2 className="text-2xl font-semibold">2. How We Use Your Information</h2>
+      <h2 className="text-2xl font-semibold" style={subheadingStyle}>2. How We Use Your Information</h2>
       <p>We use your information to:</p>
       <ul className="list-disc pl-6">
         <li>Provide and maintain our services</li>
@@ -31,7 +61,7 @@ export default function Footer() {
         <li>Communicate with you about updates and services</li>
       </ul>
   
-      <h2 className="text-2xl font-semibold">3. Data Protection</h2>
+      <h2 className="text-2xl font-semibold" style={subheadingStyle}>3. Data Protection</h2>
       <p>We implement industry-standard security measures to protect your data, including:</p>
       <ul className="list-disc pl-6">
         <li>Encryption of sensitive information</li>
@@ -39,49 +69,48 @@ export default function Footer() {
         <li>Strict access controls</li>
       </ul>
   
-      <h2 className="text-2xl font-semibold">4. Sharing and Disclosure of Information</h2>
+      <h2 className="text-2xl font-semibold" style={subheadingStyle}>4. Sharing and Disclosure of Information</h2>
       <ul className="list-disc pl-6">
         <li>Third-party service providers under strict confidentiality</li>
         <li>Compliance with legal obligations</li>
       </ul>
   
-      <h2 className="text-2xl font-semibold">5. Changes to This Privacy Policy</h2>
+      <h2 className="text-2xl font-semibold" style={subheadingStyle}>5. Changes to This Privacy Policy</h2>
       <p>We reserve the right to modify this Privacy Policy at any time. Continued use of our services after modifications constitutes acceptance of the changes.</p>
     </div>
-  );
-  
+  )
 
   const termsContent = (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-bold">Terms and Conditions</h1>
+    <div className="space-y-6" style={contentStyle}>
+      <h1 className="text-3xl font-bold" style={headingStyle}>Terms and Conditions</h1>
       <p className="text-lg">By using ANDL's services, you agree to comply with these Terms and Conditions.</p>
       
-      <h2 className="text-2xl font-semibold">1. Use of Services</h2>
+      <h2 className="text-2xl font-semibold" style={subheadingStyle}>1. Use of Services</h2>
       <ol className="list-decimal pl-6">
         <li>You must be at least 18 years old to use our services.</li>
         <li>Provide accurate and complete information when creating an account.</li>
         <li>Maintain the confidentiality of your account credentials.</li>
       </ol>
   
-      <h2 className="text-2xl font-semibold">2. Intellectual Property</h2>
+      <h2 className="text-2xl font-semibold" style={subheadingStyle}>2. Intellectual Property</h2>
       <p>All content and materials on ANDL are protected by applicable copyright and trademark laws. Unauthorized use or distribution is prohibited.</p>
   
-      <h2 className="text-2xl font-semibold">3. Limitation of Liability</h2>
+      <h2 className="text-2xl font-semibold" style={subheadingStyle}>3. Limitation of Liability</h2>
       <ul className="list-disc pl-6">
         <li>ANDL is not liable for any indirect or consequential damages.</li>
         <li>Our liability is limited to the extent permitted by law.</li>
       </ul>
   
-      <h2 className="text-2xl font-semibold">4. User-Generated Content</h2>
+      <h2 className="text-2xl font-semibold" style={subheadingStyle}>4. User-Generated Content</h2>
       <p>By submitting content to ANDL, you grant us a non-exclusive license to use and display it within the platform.</p>
   
-      <h2 className="text-2xl font-semibold">5. Changes to Terms</h2>
+      <h2 className="text-2xl font-semibold" style={subheadingStyle}>5. Changes to Terms</h2>
       <p>We reserve the right to modify these Terms at any time. Continued use of our services after modifications constitutes acceptance of the new terms.</p>
   
-      <h2 className="text-2xl font-semibold">6. Governing Law</h2>
+      <h2 className="text-2xl font-semibold" style={subheadingStyle}>6. Governing Law</h2>
       <p>These terms are governed by the laws of the Netherlands, and you agree to submit to the jurisdiction of the courts within this region.</p>
     </div>
-  );
+  )
   
   return (
     <footer className="bg-[#f9f9f9]">
@@ -168,9 +197,8 @@ export default function Footer() {
         open={isPrivacyOpen}
         onOk={() => setIsPrivacyOpen(false)}
         onCancel={() => setIsPrivacyOpen(false)}
-        width="90%"
-        style={{ maxWidth: '800px' }}
-        bodyStyle={{ maxHeight: '70vh', overflowY: 'auto' }}
+        style={modalStyle}
+        bodyStyle={{ maxHeight: isMobile ? '60vh' : '70vh', overflowY: 'auto' }}
         centered
         footer={null}
       >
@@ -182,9 +210,8 @@ export default function Footer() {
         open={isTermsOpen}
         onOk={() => setIsTermsOpen(false)}
         onCancel={() => setIsTermsOpen(false)}
-        width="90%"
-        style={{ maxWidth: '800px' }}
-        bodyStyle={{ maxHeight: '70vh', overflowY: 'auto' }}
+        style={modalStyle}
+        bodyStyle={{ maxHeight: isMobile ? '60vh' : '70vh', overflowY: 'auto' }}
         centered
         footer={null}
       >
