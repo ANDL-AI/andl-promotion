@@ -28,7 +28,7 @@ export default function Features() {
   )
 }
 
-const FeatureCard = ({ icon, title, description }) => {
+const FeatureCard = ({ icon, title, description }: {icon: any, title: any, description: any}) => {
   return (
     <div className="bg-white bg-opacity-80 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 backdrop-blur-sm">
       <div className="w-12 h-12 bg-gradient-to-br from-[#AF95E2] to-[#6321E6] rounded-xl mb-4 flex items-center justify-center transition-transform duration-300 hover:rotate-3">
