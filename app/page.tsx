@@ -9,15 +9,16 @@ import Waitlist from '@/components/waitlist';
 import Footer from '@/components/footer';
 
 export default function Component() {
-  const scrollToSection = (sectionId: any) => {
-    const section = document.getElementById(sectionId)
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
     if (section) {
-      const top = section.getBoundingClientRect().top + window.scrollY; // Calculate the position of the section
-  
+      const header = document.querySelector('header'); // Adjust this selector as needed
+      const headerHeight = header ? header.offsetHeight : 0;
+      const top = section.offsetTop - headerHeight;
       window.scrollTo({
-        top: top, // Scroll to this position
-        behavior: 'smooth' // Smooth scrolling
-      })
+        top: top,
+        behavior: 'smooth'
+      });
     }
   }
   
