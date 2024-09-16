@@ -65,7 +65,7 @@ const Waitlist: React.FC = () => {
   };
 
   return (
-    <section id="waitlist" className="px-4 py-16 bg-[#AF95E2] bg-opacity-30">
+    <section id="waitlist" className="px-4 pb-16 pt-2 bg-[#f9f9f9]">
       <h2 className="text-3xl font-bold text-center mb-8">Join Our Waitlist</h2>
       {enrolledCount !== null && (
         <p className="text-lg text-center mb-4 font-semibold">
@@ -93,7 +93,7 @@ const Waitlist: React.FC = () => {
               required
             />
             <button 
-              className="flex-shrink-0 bg-[#6321E6] hover:bg-[#4A1AAB] text-sm text-white py-2 px-4 rounded-full transition-colors duration-300" 
+              className="flex-shrink-0 bg-[#000000] hover:bg-[#4A1AAB] text-sm text-white py-2 px-4 rounded-full transition-colors duration-300" 
               type="submit"
             >
               Join Waitlist

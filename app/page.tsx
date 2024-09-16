@@ -25,7 +25,7 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white to-[#AF95E2] animate-gradient-x"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white to-[#c3b3e2]"></div>
 
       {/* Content container */}
       <div className="relative z-10">

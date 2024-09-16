@@ -11,7 +11,7 @@ export default function Features() {
         <FeatureCard
           icon={<HandHelping className="w-6 h-6 text-white" />}
           title="Comprehensive Response Assistance"
-          description="ANDL provides detailed clarity metrics like rationale, counterfactuals, bias, and confidence alongside each response, ensuring a deeper understanding of the AI's outputs."
+          description="ANDL provides detailed clarity modules like rationale, counterfactuals, bias, and confidence alongside each response, ensuring a deeper understanding of the AI's outputs."
         />
         <FeatureCard
           icon={<MessageSquare className="w-6 h-6 text-white" />}

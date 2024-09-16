@@ -51,7 +51,7 @@ Previously worked in data science for 3 years.`,
 
 export default function AboutUs() {
   return (
-    <section id="about" className="flex flex-col items-center justify-center w-full h-full px-4 bg-gradient-to-br from-white to-[#AF95E2]">
+    <section id="about" className="flex flex-col items-center justify-center w-full h-full px-4 bg-gradient-to-br from-white to-[#c3b3e2]">
       <div className="max-w-7xl mx-auto">
         <div className="text-lg text-gray-700 mb-12 text-center mt-32 my-4 lg:my-8">
           <h3 className="text-2xl font-bold text-[#6321E6] mb-4">Fun Fact 💡</h3>

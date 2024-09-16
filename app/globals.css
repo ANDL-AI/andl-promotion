@@ -27,12 +27,12 @@ body::after {
 
 body::before {
   top: 0;
-  background: linear-gradient(to bottom right, #ffffff, #AF95E2);
+  background: linear-gradient(to bottom right, #ffffff, #c3b3e2);
 }
 
 body::after {
   bottom: 0;
-  background: white;
+  background: #f9f9f9;
 }
 
 /* Dots Animation */
@@ -60,6 +60,7 @@ body::after {
 #demo {
   animation: colorChange 5s infinite;
 }
+/* Existing gradient animation */
 .combined-gradient-text {
   display: inline-block;
   background: linear-gradient(90deg, #504BDF, #AF95E2, #504BDF);
@@ -78,8 +79,41 @@ body::after {
   }
 }
 
+/* Default text colors */
+.responsible {
+  color: #504BDF; /* Default color for Responsible */
+  -webkit-text-fill-color: #504BDF;
+  font-weight: bold;
+}
+
 .and-text {
   color: black;
   -webkit-text-fill-color: black;
   font-weight: bold;
+}
+
+.explainable {
+  color: #AF95E2; /* Default color for Explainable */
+  -webkit-text-fill-color: #AF95E2;
+  font-weight: bold;
+}
+
+/* Override the gradient effect */
+.combined-gradient-text .responsible,
+.combined-gradient-text .explainable {
+  -webkit-background-clip: none;
+  -webkit-text-fill-color: inherit; /* Let them inherit their default colors after gradient */
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-blink {
+  animation: blink 0.7s infinite;
 }
