@@ -10,6 +10,7 @@ export default function Footer() {
   const isHomePage = pathname === "/"
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false)
   const [isTermsOpen, setIsTermsOpen] = useState(false)
+  const [isPolicyOpen, setIsPolicyOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
@@ -111,6 +112,42 @@ export default function Footer() {
       <p>These terms are governed by the laws of the Netherlands, and you agree to submit to the jurisdiction of the courts within this region.</p>
     </div>
   )
+
+  const aiPolicyContent = (
+    <div className="space-y-6">
+      <h1 className="text-3xl font-bold">ANDL AI Policy</h1>
+  
+      <h2 className="text-2xl font-semibold">1. Purpose</h2>
+      <p>This AI policy aims to establish guidelines and best practices for the responsible and ethical use of Artificial Intelligence (AI) within ANDL (hereby referred to as the ‘Company’). It ensures that users are using the provided AI interfaces and platform in alignment with the company’s values, adhering to legal and regulatory standards, and promoting the safety and well-being of stakeholders.</p>
+  
+      <h2 className="text-2xl font-semibold">2. Scope</h2>
+      <p>This policy applies to all users, educational institutions, employees, and partners of ANDL who use or interact with our AI systems, including but not limited to all LLMs, platforms, and data-driven tools.</p>
+  
+      <h2 className="text-2xl font-semibold">3. Policy</h2>
+      <ul className="list-disc pl-6">
+        <li><b>Responsible AI Use:</b> Users must use AI systems responsibly and ethically, avoiding actions that could harm others, violate privacy, or facilitate malicious activities.</li>
+        <li><b>Compliance with Laws and Regulations:</b> AI systems must be used in compliance with all applicable laws and regulations, including data protection, privacy, and intellectual property laws.</li>
+        <li><b>Transparency and Accountability:</b> Users must maintain transparency and accountability to ensure ethical and lawful compliance when using AI tools. They must verify the reliability and fairness of AI outputs, as human oversight is crucial in preventing errors and mitigating potential biases. ANDL provides AI "Clarity Modules" such as bias and confidence with all LLM responses. Non-compliance can result in serious consequences as outlined under Enforcement.</li>
+        <li><b>Data Privacy and Security:</b> Users must avoid submitting personal or sensitive data to the AI systems, including but not limited to proprietary information, date of birth, and social security numbers.</li>
+      </ul>
+  
+      <h2 className="text-2xl font-semibold">4. Implementation and Monitoring</h2>
+      <ul className="list-disc pl-6">
+        <li><b>Assigned Moderator:</b> A moderator will be responsible for overseeing the implementation of this policy, providing guidance to users, and ensuring compliance with relevant laws.</li>
+        <li><b>Periodic Reviews:</b> The moderator will conduct periodic reviews of AI system use within the company to ensure adherence to the policy, identify risks, and recommend updates.</li>
+        <li><b>Incident Reporting:</b> Users must report any suspected violations or concerns regarding AI use to the moderator or through the company's established reporting channels.</li>
+      </ul>
+  
+      <h2 className="text-2xl font-semibold">5. Enforcement</h2>
+      <p>Violations of this policy may result in strict and immediate action, including account restriction or deletion, in accordance with the company’s disciplinary policies.</p>
+  
+      <h2 className="text-2xl font-semibold">6. Policy Review</h2>
+      <p>This policy will be reviewed annually or as needed based on the evolution of AI technology and the regulatory landscape. Any changes to the policy will be communicated to all users.</p>
+  
+      <h2 className="text-2xl font-semibold">7. Effective Date</h2>
+      <p>This policy is effective as of September 16, 2024.</p>
+    </div>
+  );  
   
   return (
     <footer className="bg-[#f9f9f9]">
@@ -134,6 +171,11 @@ export default function Footer() {
               <li>
                 <button onClick={() => setIsPrivacyOpen(true)} className="text-gray-600 hover:text-gray-900">
                   Privacy Policy
+                </button>
+              </li>
+              <li>
+                <button onClick={() => setIsPolicyOpen(true)} className="text-gray-600 hover:text-gray-900">
+                  ANDL AI Policy
                 </button>
               </li>
             </ul>
@@ -218,6 +260,20 @@ export default function Footer() {
         footer={null}
       >
         {termsContent}
+      </Modal>
+
+      <Modal
+        title="ANDL AI Policy"
+        open={isPolicyOpen}
+        onOk={() => setIsPolicyOpen(false)}
+        onCancel={() => setIsPolicyOpen(false)}
+        style={modalStyle}
+        bodyStyle={{ maxHeight: isMobile ? '60vh' : '60vh', overflowY: 'auto' }}
+        centered
+        width={isMobile ? '95%' : '40%'} // Add this line to control the width
+        footer={null}
+      >
+        {aiPolicyContent}
       </Modal>
     </footer>
   )
