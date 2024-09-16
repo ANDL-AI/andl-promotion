@@ -13,7 +13,7 @@ export default function HeroAndDemo() {
         The new standard in AI for education.
       </p>
       <div className="flex justify-center gap-4 mb-0">
-        <a href="mailto:team@andl.io" className="border border-[#00171f] text-[#00171f] px-6 py-2 rounded-full font-semibold hover:bg-hs-third">
+        <a href="mailto:team@andl.io" className="border border-[#00171f] text-white hover:bg-hs-secondary px-6 py-2 rounded-full font-semibold bg-black transition-all duration-300">
           Book a demo →
         </a>
       </div>
