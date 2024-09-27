@@ -26,8 +26,7 @@ const people: Person[] = [
     personalSite: "https://sagarspace.com/"
   },
   {
-    input: `CS @ TU Delft.
-Previously worked in data science for 3 years.`,
+    input: `CS @ TU Delft. Previously worked in data science for 3 years.`,
     name: 'Atilla Colak',
     role: 'Co-founder and Developer',
     image: 'https://media.licdn.com/dms/image/v2/C4E03AQHc4JQQ50ptow/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1609161991588?e=1730937600&v=beta&t=GbWS4m6HOQBAmh9x85iRTwEv0fr8b4gz8QhJWchcE-w',
@@ -44,7 +43,7 @@ Previously worked in data science for 3 years.`,
     github: "https://github.com/manugautam04"
   },
   {
-    input: "Full-Stack Dev & CS @ TU Delft.",
+    input: "Full-Stack Developer & CS @ TU Delft.",
     name: "Neel Lodha",
     role: "Co-founder and Developer",
     image: "https://media.licdn.com/dms/image/v2/D4E03AQEh6KfMJpXjRA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714233672794?e=1730937600&v=beta&t=O4ama9vmfxPyQuIPmTB5V5ttXjeyhiRD_F1krpZpnWg",
@@ -56,9 +55,9 @@ Previously worked in data science for 3 years.`,
 export default function AboutUs() {
   return (
     <section id="about" className="flex flex-col items-center justify-center w-full min-h-screen px-4 bg-gradient-to-br from-white to-[#c3b3e2]">
-      <div className="mt-24 max-w-7xl w-5/6 mx-auto cursor-no-pointer items-center">
-        <ANDLInfoTabs/>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 pb-12 md:pt-12 md:pb-24">
+      <div className="mt-24 max-w-7xl w-full mx-auto cursor-no-pointer flex flex-col items-center justify-center">
+      <ANDLInfoTabs/>
+        <div className="w-3/4 grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 pb-12 md:pt-12 md:pb-24">
           {people.map((person, index) => (
             <div
               key={index}
@@ -73,11 +72,11 @@ export default function AboutUs() {
                   className="rounded-full"
                 />
                 <div className="ml-6">
-                  <h3 className="text-2xl font-semibold text-[#00171f]">{person.name}</h3>
-                  <p className="text-lg text-gray-600">{person.role}</p>
+                  <h3 className="text-xl font-semibold text-[#00171f]">{person.name}</h3>
+                  <p className="text-md text-gray-600">{person.role}</p>
                 </div>
               </div>
-              <p className="text-lg mb-4 text-gray-700">{person.input}</p>
+              <p className="text-md mb-4 text-gray-700">{person.input}</p>
               <div className="flex space-x-4">
                 {person.linkedin && (
                   <a
@@ -86,7 +85,7 @@ export default function AboutUs() {
                     rel="noopener noreferrer"
                     className="text-[#6321E6] hover:text-[#4A1AAB] transition duration-300"
                   >
-                    <Linkedin size={24} />
+                    <Linkedin size={20} />
                   </a>
                 )}
                 {person.github && (
@@ -96,7 +95,7 @@ export default function AboutUs() {
                     rel="noopener noreferrer"
                     className="text-[#6321E6] hover:text-[#4A1AAB] transition duration-300"
                   >
-                    <Github size={24} />
+                    <Github size={20} />
                   </a>
                 )}
                 {person.personalSite && (
@@ -106,12 +105,13 @@ export default function AboutUs() {
                     rel="noopener noreferrer"
                     className="text-[#6321E6] hover:text-[#4A1AAB] transition duration-300"
                   >
-                    <Globe size={24} />
+                    <Globe size={20} />
                   </a>
                 )}
               </div>
             </div>
           ))}
+
         </div>
       </div>
     </section>

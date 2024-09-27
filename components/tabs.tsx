@@ -18,44 +18,23 @@ const tabs: TabContent[] = [
     content: "A world where AI can be used in education without doubt and complete confidence."
   },
   {
-    title: "Fun Fact",
+    title: "Fun Fact 💡",
     content: "ANDL was initially conceived as a winning hackathon project at the Vrije Universiteit Amsterdam in our second year of university. Now, little over a year later, the idea evolved into a full-fledged startup with a full-time team of 4 co-founders."
   }
 ]
-
-const wrapText = (text: string, maxLength: number) => {
-  const words = text.split(' ')
-  const lines: string[] = []
-  let currentLine = ''
-
-  words.forEach(word => {
-    if ((currentLine + word).length > maxLength) {
-      lines.push(currentLine.trim())
-      currentLine = word + ' '
-    } else {
-      currentLine += word + ' '
-    }
-  })
-
-  if (currentLine) {
-    lines.push(currentLine.trim())
-  }
-
-  return lines.join('\n')
-}
 
 export default function ANDLInfoTabs() {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <div className="w-full flex flex-col items-center my-10">
-      <div className="inline-flex bg-gray-100 rounded-t-lg shadow-md">
+    <div className="w-5/6 flex items-center justify-start">
+      <div className="w-1/3 inline-flex flex-col items-start rounded-lg">
         {tabs.map((tab, index) => (
           <button
             key={index}
-            className={`px-6 py-3 text-lg font-medium transition-colors duration-200 ${
+            className={`px-2 text-lg font-medium transition-colors duration-200 ${
               activeTab === index
-                ? 'bg-white text-purple-600 shadow-sm'
+                ? 'text-purple-600'
                 : 'text-gray-500 hover:text-gray-700 hover:bg-gray-200'
             }`}
             onClick={() => setActiveTab(index)}
@@ -64,7 +43,7 @@ export default function ANDLInfoTabs() {
           </button>
         ))}
       </div>
-      <div className="w-full max-w-7xl py-2 px-4 h-36 flex items-center justify-center bg-white shadow-md rounded-lg min-w-7xl">
+      <div className="w-2/3 flex max-w-7xl rounded-lg">
         {tabs.map((tab, index) => (
           <motion.div
             key={index}
@@ -78,7 +57,7 @@ export default function ANDLInfoTabs() {
               activeTab === index ? 'block' : 'hidden'
             }`}
           >
-            <p className="px-4 text-lg text-gray-700 leading-relaxed text-center max-w-7xl">
+            <p className="px-4 text-md text-[#00171f] leading-relaxed text-start max-w-7xl">
               {tab.content}
             </p>
           </motion.div>
