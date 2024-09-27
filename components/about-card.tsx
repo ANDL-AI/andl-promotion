@@ -56,7 +56,7 @@ Previously worked in data science for 3 years.`,
 export default function AboutUs() {
   return (
     <section id="about" className="flex flex-col items-center justify-center w-full min-h-screen px-4 bg-gradient-to-br from-white to-[#c3b3e2]">
-      <div className="mt-24 max-w-7xl mx-auto cursor-no-pointer items-center">
+      <div className="mt-24 max-w-7xl w-5/6 mx-auto cursor-no-pointer items-center">
         <ANDLInfoTabs/>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 pb-12 md:pt-12 md:pb-24">
           {people.map((person, index) => (

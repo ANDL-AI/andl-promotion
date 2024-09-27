@@ -53,7 +53,7 @@ export default function ANDLInfoTabs() {
         {tabs.map((tab, index) => (
           <button
             key={index}
-            className={`px-6 py-3 text-sm font-medium transition-colors duration-200 ${
+            className={`px-6 py-3 text-lg font-medium transition-colors duration-200 ${
               activeTab === index
                 ? 'bg-white text-purple-600 shadow-sm'
                 : 'text-gray-500 hover:text-gray-700 hover:bg-gray-200'
@@ -64,7 +64,7 @@ export default function ANDLInfoTabs() {
           </button>
         ))}
       </div>
-      <div className="w-full max-w-2xl p-6 relative h-48 flex items-center justify-center bg-white shadow-md rounded-b-lg">
+      <div className="w-full max-w-7xl py-2 px-4 h-36 flex items-center justify-center bg-white shadow-md rounded-lg min-w-7xl">
         {tabs.map((tab, index) => (
           <motion.div
             key={index}
@@ -74,11 +74,11 @@ export default function ANDLInfoTabs() {
               y: activeTab === index ? 0 : 10
             }}
             transition={{ duration: 0.3 }}
-            className={`absolute inset-0 flex items-center justify-center ${
+            className={`inset-0 flex items-center justify-center ${
               activeTab === index ? 'block' : 'hidden'
             }`}
           >
-            <p className="px-4 text-lg text-gray-700 leading-relaxed text-center max-w-xl">
+            <p className="px-4 text-lg text-gray-700 leading-relaxed text-center max-w-7xl">
               {tab.content}
             </p>
           </motion.div>
