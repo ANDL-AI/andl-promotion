@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Linkedin, Github, Globe } from 'lucide-react'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import ANDLInfoTabs from './tabs'
 
 interface Person {
   input: string
@@ -57,35 +57,7 @@ export default function AboutUs() {
   return (
     <section id="about" className="flex flex-col items-center justify-center w-full min-h-screen px-4 bg-gradient-to-br from-white to-[#c3b3e2]">
       <div className="mt-24 max-w-7xl mx-auto cursor-no-pointer items-center">
-        <Tabs defaultValue="mission" className="w-full mb-8">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="mission">Mission</TabsTrigger>
-            <TabsTrigger value="vision">Vision</TabsTrigger>
-            <TabsTrigger value="funFact">Fun Fact</TabsTrigger>
-          </TabsList>
-          <div className="mt-4 h-40 flex items-center justify-center text-center min-w-full">
-            <TabsContent value="mission" className="w-full">
-              <p className="text-lg text-gray-700">
-                "Empower students and educational institutions to navigate AI in education responsibly and effectively."
-              </p>
-            </TabsContent>
-            <TabsContent value="vision" className="w-full">
-              <p className="text-lg text-gray-700">
-                "A world where AI can be used in education without doubt and complete confidence."
-              </p>
-            </TabsContent>
-            <TabsContent value="funFact" className="w-full">
-              <p className="text-lg text-gray-700">
-                ANDL was initially conceived as a winning hackathon project at the{' '}
-                <a href="https://vu.nl/en" className="text-[#6321E6] hover:underline transition duration-300">
-                  Vrije Universiteit Amsterdam
-                </a>{' '}
-                in our second year of university. Now, little over a year later, the idea evolved into a full-fledged startup
-                with a full-time team of 4 co-founders.
-              </p>
-            </TabsContent>
-          </div>
-        </Tabs>
+        <ANDLInfoTabs/>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 pb-12 md:pt-12 md:pb-24">
           {people.map((person, index) => (
             <div
