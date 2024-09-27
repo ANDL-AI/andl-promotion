@@ -8,7 +8,7 @@ import Logo from "@/public/andl_black_color_white_bg.svg"
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
-  const menuRef = useRef<HTMLDivElement>(null) 
+  const menuRef = useRef<HTMLDivElement>(null)
 
 
   useEffect(() => {
@@ -43,8 +43,8 @@ export default function Header() {
             <Image src={Logo} alt="Logo" width={150} height={150} className="object-contain cursor-pointer" />
           </Link>
           <div className="flex items-center space-x-4">
-            <a 
-              href="#about" 
+            <a
+              href="/about"
               className="text-black font-medium cursor-pointer transition-all duration-300 hover:text-[#6321E6] hover:scale-105"
             >
               About Us
@@ -56,7 +56,7 @@ export default function Header() {
               >
                 <Menu size={24} className="mx-2" />
               </button>
-              <nav 
+              <nav
                 className={`absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 transition-all duration-300 ease-in-out ${
                   isMenuOpen ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform -translate-y-2 pointer-events-none'
                 }`}

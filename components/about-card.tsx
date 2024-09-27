@@ -1,6 +1,9 @@
+"use client"
+
 import React from 'react'
 import Image from 'next/image'
 import { Linkedin, Github, Globe } from 'lucide-react'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 interface Person {
   input: string
@@ -16,13 +19,14 @@ const people: Person[] = [
   {
     input: `Ex-PwC Software Developer. HCI & AI Researcher.`,
     name: "Sagar Chethan Kumar",
-    role: "Co-founder and AI Developer", 
+    role: "Co-founder and AI Developer",
     image: "https://media.licdn.com/dms/image/v2/D4E03AQFVA2vH-cDXpQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704072652393?e=1730937600&v=beta&t=XXFNEoqQbBMU-XhkETj4cdttdDci55dICz_OmnKENO0",
     linkedin: "https://www.linkedin.com/in/sagar-chethan-kumar/",
-    github: "https://github.com/Sagar-CK"
+    github: "https://github.com/Sagar-CK",
+    personalSite: "https://sagarspace.com/"
   },
   {
-    input: `CS @ TU Delft. 
+    input: `CS @ TU Delft.
 Previously worked in data science for 3 years.`,
     name: 'Atilla Colak',
     role: 'Co-founder and Developer',
@@ -31,19 +35,19 @@ Previously worked in data science for 3 years.`,
     github: "https://github.com/AtillaColak",
     personalSite: "https://atillas.co/"
   },
-  { 
-    input: "Honors CS @ TU Delft.", 
-    name: "Manu Gautam", 
-    role: "Co-founder and AI Developer", 
-    image: "https://media.licdn.com/dms/image/v2/D5603AQEa6AKMMUNS-g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695722114136?e=1730937600&v=beta&t=euQY6979D1ax2j6Yf7_rUf3AYKd777UIpp2r0eZ2xTY", 
+  {
+    input: "Honors CS @ TU Delft.",
+    name: "Manu Gautam",
+    role: "Co-founder and AI Developer",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQEa6AKMMUNS-g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695722114136?e=1730937600&v=beta&t=euQY6979D1ax2j6Yf7_rUf3AYKd777UIpp2r0eZ2xTY",
     linkedin: "https://www.linkedin.com/in/manu-gautam-6b5064259/",
     github: "https://github.com/manugautam04"
   },
   {
-    input: "Full-Stack dev & CS @ TU Delft.", 
-    name: "Neel Lodha", 
-    role: "Co-founder and Developer", 
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQEh6KfMJpXjRA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714233672794?e=1730937600&v=beta&t=O4ama9vmfxPyQuIPmTB5V5ttXjeyhiRD_F1krpZpnWg", 
+    input: "Full-Stack Dev & CS @ TU Delft.",
+    name: "Neel Lodha",
+    role: "Co-founder and Developer",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQEh6KfMJpXjRA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714233672794?e=1730937600&v=beta&t=O4ama9vmfxPyQuIPmTB5V5ttXjeyhiRD_F1krpZpnWg",
     linkedin: "https://www.linkedin.com/in/neel-lodha/",
     github: "https://github.com/Idkwhoami42"
   }
@@ -51,15 +55,37 @@ Previously worked in data science for 3 years.`,
 
 export default function AboutUs() {
   return (
-    <section id="about" className="flex flex-col items-center justify-center w-full h-full px-4 bg-gradient-to-br from-white to-[#c3b3e2]">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-lg text-gray-700 mb-12 text-center mt-32 my-4 lg:my-8">
-          <h3 className="text-2xl font-bold text-[#6321E6] mb-4">Fun Fact 💡</h3>
-          <p className="max-w-3xl mx-auto">
-            ANDL was initially conceived as a winning hackathon project at the <a href="https://vu.nl/en" className="text-[#6321E6] hover:underline transition duration-300">Vrije Universiteit Amsterdam</a> in our second year of university.
-            Now, little over a year later, the idea evolved into a full-fledged startup with a full-time team of 4 co-founders.
-          </p>
-        </div>
+    <section id="about" className="flex flex-col items-center justify-center w-full min-h-screen px-4 bg-gradient-to-br from-white to-[#c3b3e2]">
+      <div className="mt-24 max-w-7xl mx-auto cursor-no-pointer items-center">
+        <Tabs defaultValue="mission" className="w-full mb-8">
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value="mission">Mission</TabsTrigger>
+            <TabsTrigger value="vision">Vision</TabsTrigger>
+            <TabsTrigger value="funFact">Fun Fact</TabsTrigger>
+          </TabsList>
+          <div className="mt-4 h-40 flex items-center justify-center text-center min-w-full">
+            <TabsContent value="mission" className="w-full">
+              <p className="text-lg text-gray-700">
+                "Empower students and educational institutions to navigate AI in education responsibly and effectively."
+              </p>
+            </TabsContent>
+            <TabsContent value="vision" className="w-full">
+              <p className="text-lg text-gray-700">
+                "A world where AI can be used in education without doubt and complete confidence."
+              </p>
+            </TabsContent>
+            <TabsContent value="funFact" className="w-full">
+              <p className="text-lg text-gray-700">
+                ANDL was initially conceived as a winning hackathon project at the{' '}
+                <a href="https://vu.nl/en" className="text-[#6321E6] hover:underline transition duration-300">
+                  Vrije Universiteit Amsterdam
+                </a>{' '}
+                in our second year of university. Now, little over a year later, the idea evolved into a full-fledged startup
+                with a full-time team of 4 co-founders.
+              </p>
+            </TabsContent>
+          </div>
+        </Tabs>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 pb-12 md:pt-12 md:pb-24">
           {people.map((person, index) => (
             <div
@@ -89,7 +115,7 @@ export default function AboutUs() {
                     className="text-[#6321E6] hover:text-[#4A1AAB] transition duration-300"
                   >
                     <Linkedin size={24} />
-                  </a>      
+                  </a>
                 )}
                 {person.github && (
                   <a
@@ -99,7 +125,7 @@ export default function AboutUs() {
                     className="text-[#6321E6] hover:text-[#4A1AAB] transition duration-300"
                   >
                     <Github size={24} />
-                  </a>      
+                  </a>
                 )}
                 {person.personalSite && (
                   <a
@@ -109,7 +135,7 @@ export default function AboutUs() {
                     className="text-[#6321E6] hover:text-[#4A1AAB] transition duration-300"
                   >
                     <Globe size={24} />
-                  </a>      
+                  </a>
                 )}
               </div>
             </div>

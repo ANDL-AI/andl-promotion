@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Head from 'next/head';
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ANDL AI | Responsible AI for Education",
@@ -27,9 +25,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ANDL AI | Responsible AI for Education",
     description: "Learn how ANDL is transforming education with responsible and explainable AI.",
-    images: "https://github.com/ANDL-AI/public-assets/blob/main/andl_logo.png?raw=true", 
+    images: "https://github.com/ANDL-AI/public-assets/blob/main/andl_logo.png?raw=true",
   },
 };
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["300"],
+});
 
 export default function RootLayout({
   children,
@@ -79,7 +83,7 @@ export default function RootLayout({
         </script>
 
       </Head>
-      <body className={inter.className}>
+      <body className={`${poppins.variable} font-sans}`}>
         {children}
         {/* Add custom 404 error page as a fallback */}
       </body>
