@@ -35,7 +35,7 @@ export default function Header({ scrollToSection }: {scrollToSection: any}) {
   }
 
   return (
-    <header className={`fixed w-full transition-all duration-300 ${scrollPosition > 50 ? 'bg-white bg-opacity-90' : 'bg-transparent'}`}>
+    <header className={`z-10 fixed w-full transition-all duration-300 ${scrollPosition > 50 ? 'bg-white bg-opacity-90' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Link href="/">
