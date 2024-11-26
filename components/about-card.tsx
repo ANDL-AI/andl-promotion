@@ -22,7 +22,7 @@ const people: Person[] = [
     input: `Ex-PwC Software Developer. HCI & AI Researcher.`,
     name: "Sagar Chethan Kumar",
     role: "Co-founder and AI Developer",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQFVA2vH-cDXpQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704072652393?e=1730937600&v=beta&t=XXFNEoqQbBMU-XhkETj4cdttdDci55dICz_OmnKENO0",
+    image: "/sagar.jpeg",
     linkedin: "https://www.linkedin.com/in/sagar-chethan-kumar/",
     github: "https://github.com/Sagar-CK",
     personalSite: "https://sagarspace.com/"
@@ -31,7 +31,7 @@ const people: Person[] = [
     input: `CS @ TU Delft. Previously worked in data science for 3 years.`,
     name: 'Atilla Colak',
     role: 'Co-founder and Developer',
-    image: 'https://media.licdn.com/dms/image/v2/C4E03AQHc4JQQ50ptow/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1609161991588?e=1730937600&v=beta&t=GbWS4m6HOQBAmh9x85iRTwEv0fr8b4gz8QhJWchcE-w',
+    image: '/atilla.jpeg',
     linkedin: 'https://www.linkedin.com/in/atilla-colak/',
     github: "https://github.com/AtillaColak",
     personalSite: "https://atillas.co/"
@@ -40,7 +40,7 @@ const people: Person[] = [
     input: "Honors CS @ TU Delft.",
     name: "Manu Gautam",
     role: "Co-founder and AI Developer",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQEa6AKMMUNS-g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695722114136?e=1730937600&v=beta&t=euQY6979D1ax2j6Yf7_rUf3AYKd777UIpp2r0eZ2xTY",
+    image: "/manu.jpeg",
     linkedin: "https://www.linkedin.com/in/manu-gautam-6b5064259/",
     github: "https://github.com/manugautam04"
   },
@@ -48,7 +48,7 @@ const people: Person[] = [
     input: "Full-Stack Developer & CS @ TU Delft.",
     name: "Neel Lodha",
     role: "Co-founder and Developer",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQEh6KfMJpXjRA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714233672794?e=1730937600&v=beta&t=O4ama9vmfxPyQuIPmTB5V5ttXjeyhiRD_F1krpZpnWg",
+    image: "/neel.jpeg",
     linkedin: "https://www.linkedin.com/in/neel-lodha/",
     github: "https://github.com/Idkwhoami42"
   }
