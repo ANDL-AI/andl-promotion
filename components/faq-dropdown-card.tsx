@@ -10,16 +10,16 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "How does ANDL enhance the learning experience for students?",
-      answer: "ANDL provides a personalised learning experience for every student. Our platfrom allows students to create their own leaning dashboard using all their course materials and then interact with their very own AI tutor. This allows students to get help specific to the content they are learning and allows them to learn more effectively."
+      question: "How does ANDL enhance my learning experience?",
+      answer: "ANDL provides a personalised learning experience for everyone. Our platform allows you to create your own leaning dashboard using all your course materials and then interact with your very own AI tutor. This allows you to get help specific to your content and learn more effectively."
     },
     {
       question: "What makes ANDL different from other e-learning platforms?",
       answer: "Unlike existing AI tutors, ANDL incorporates ground truth data from students and professors to provide more accurate and relevant responses. This collaborative approach ensures that the AI is constantly learning and improving and differentiating ourselves from traditional AI tutoring platforms that often neglect human oversight."
     },
     {
-      question: "How does ANDL's community platform work?",
-      answer: "ANDL's community platform allows students, TAs, and professors to interact and collaborate. Students can ask public questions, receive AI-generated responses, and get feedback from the community. This collaborative approach helps validate and enhance the AI's responses, providing a richer learning experience."
+      question: "How does ANDL's AI community forum work?",
+      answer: "ANDL's AI community forum allows students, TAs, and professors to interact and collaborate. Students can ask public questions, receive AI-generated responses, and get feedback from the community. This collaborative approach helps validate and enhance the AI's responses, providing a richer learning experience."
     },
     {
       question: "Who can use ANDL?",
