@@ -150,59 +150,59 @@ export default function Footer() {
   );  
   
   return (
-    <footer className="bg-[#f9f9f9]">
+    <footer className="bg-[#f9f9f9] dark:bg-[#1F2937]">
       <div className="max-w-6xl mx-auto">
-        {isHomePage && <div className="w-full h-px bg-gray-400" />}
+        {isHomePage && <div className="w-full h-px bg-gray-400 dark:bg-gray-400"/>}
         <div className="px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-900">ANDL</h2>
-            <p className="text-sm text-gray-600">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-[#F9FAFB]">ANDL</h2>
+            <p className="text-sm text-gray-600 dark:text-[#e1e1e1]">
               Innovating the future of learning responsibly.
             </p>
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-gray-900 dark:text-[#F9FAFB] mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <button onClick={() => setIsTermsOpen(true)} className="text-gray-600 hover:text-gray-900">
+                <button onClick={() => setIsTermsOpen(true)} className="text-gray-600 dark:text-[#e1e1e1] hover:text-[#8B5CF6] dark:hover:text-[#8B5CF6]">
                   Terms & Conditions
                 </button>
               </li>
               <li>
-                <button onClick={() => setIsPrivacyOpen(true)} className="text-gray-600 hover:text-gray-900">
+                <button onClick={() => setIsPrivacyOpen(true)} className="text-gray-600 dark:text-[#e1e1e1] hover:text-[#8B5CF6] dark:hover:text-[#8B5CF6]">
                   Privacy Policy
                 </button>
               </li>
               <li>
-                <button onClick={() => setIsPolicyOpen(true)} className="text-gray-600 hover:text-gray-900">
+                <button onClick={() => setIsPolicyOpen(true)} className="text-gray-600 dark:text-[#e1e1e1] hover:text-[#8B5CF6] dark:hover:text-[#8B5CF6]">
                   ANDL AI Policy
                 </button>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Contact</h3>
+            <h3 className="font-semibold text-gray-900 dark:text-[#F9FAFB] mb-4">Contact</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex items-center space-x-2">
-                <Mail size={16} className="text-gray-600" />
-                <a href="mailto:team@andl.io" className="text-gray-600 hover:text-gray-900">
+                <Mail size={16} className="text-gray-600 dark:text-[#e1e1e1]" />
+                <a href="mailto:team@andl.io" className="text-gray-600 dark:text-[#e1e1e1] hover:text-[#4F79F6] dark:hover:text-[#4F79F6]">
                   team@andl.io
                 </a>
               </li>
               <li className="flex items-start space-x-2">
-                <MapPin size={16} className="text-gray-600 mt-1 flex-shrink-0" />
-                <span className="text-gray-600">Mekelweg 5, 2628 CD Delft</span>
+                <MapPin size={16} className="text-gray-600 dark:text-[#e1e1e1] mt-1 flex-shrink-0 dark:hover:text-[#4F79F6]" />
+                <span className="text-gray-600 dark:text-[#e1e1e1]">Mekelweg 5, 2628 CD Delft</span>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Follow Us</h3>
+            <h3 className="font-semibold text-gray-900 dark:text-[#F9FAFB] mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/ANDL-AI"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900"
+                className="text-gray-600 hover:text-[#8B5CF6] dark:text-[#e1e1e1] dark:hover:text-[#8B5CF6]"
               >
                 <span className="sr-only">GitHub</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -217,7 +217,7 @@ export default function Footer() {
                 href="https://linkedin.com/company/andl-ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900"
+                className="text-gray-600 hover:text-[#8B5CF6] dark:text-[#e1e1e1] dark:hover:text-[#8B5CF6]"
               >
                 <span className="sr-only">LinkedIn</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -228,7 +228,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="px-4 py-8 border-t border-gray-200">
-          <p className="text-center text-sm text-gray-600">
+          <p className="text-center text-sm text-gray-600 dark:text-[#e1e1e1]">
             © {new Date().getFullYear()} ANDL. All rights reserved.
           </p>
         </div>

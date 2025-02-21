@@ -11,7 +11,7 @@ html {
 body {
   flex-grow: 1;
   overflow-x: hidden;
-  background-color: #e4ddf0;
+  background-color: #F9FAFB;
   position: relative;
 }
 
@@ -27,12 +27,12 @@ body::after {
 
 body::before {
   top: 0;
-  background: linear-gradient(to bottom right, #ffffff, #c3b3e2);
+  background: linear-gradient(to bottom right, #ffffff, #F9FAFB);
 }
 
 body::after {
   bottom: 0;
-  background: #f9f9f9;
+  background: #F9FAFB;
 }
 
 /* Dots Animation */
@@ -181,4 +181,14 @@ body::after {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::-moz-selection {
+  background: #AFAFAF;
+}
+::-webkit-selection {
+  background: #AFAFAF;
+}
+::selection {
+  background: #AFAFAF;
 }
