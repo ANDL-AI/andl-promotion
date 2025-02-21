@@ -52,23 +52,23 @@ const initialCards: Card[] = [
   {
     id: 1,
     icon: <HandHelping className="w-10 h-8 text-[#8B5CF6]" />,
-    title: 'Comprehensive Response Assistance',
+    title: 'Personalized AI Tutoring, Just for You',
     description:
-      'ANDL provides detailed clarity modules like rationale, counterfactuals, bias, and confidence alongside each response, ensuring a deeper understanding of the AI’s outputs.',
+      'Get instant, customized feedback on your learning materials. ANDL’s AI tutor adapts to your needs, helping you master concepts faster and with confidence.',
   },
   {
     id: 2,
     icon: <MessageSquare className="w-10 h-8 text-[#8B5CF6]" />,
-    title: 'Engaging Community Platform',
+    title: 'Learn Your Way, Anytime, Anywhere',
     description:
-      'Our platform encourages interaction through a Stack-like community, where students, professors, and TAs collaborate and share knowledge. Gamification elements reward active participation and contributions.',
+      'Prefer videos, audio, or interactive exercises? ANDL lets you choose how you learn best, making studying more engaging and effective.',
   },
   {
     id: 3,
     icon: <ChartNetwork className="w-10 h-8 text-[#8B5CF6]" />,
-    title: 'Advanced Analytics for Educators',
+    title: 'AI That Explains, Not Just Answers',
     description:
-      'Educators and staff get access to detailed analytics through a dedicated dashboard, helping them identify learning gaps, monitor usage, and refine their teaching strategies.',
+      'Beyond just giving answers, ANDL’s AI breaks down the reasoning, offers insights, and sparks deeper thinking—so you truly understand every concept.',
   },
 ];
 

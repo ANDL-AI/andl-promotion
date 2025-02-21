@@ -33,9 +33,9 @@ const events: JourneyEvent[] = [
   },
   {
     id: 4,
-    date: "Today",
-    title: "Where We Are Now",
-    text: "Today, we continue our journey with passion and dedication, shaping the future and laying the groundwork for AI in education. More exciting updates coming soon!",
+    date: "March 2025",
+    title: "First Student Pilot",
+    text: "Calling all students! We are looking for students to join our pilot program. Be amongst the first to experience ANDL.",
   },
 ];
 

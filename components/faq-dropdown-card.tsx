@@ -11,33 +11,33 @@ export default function FAQ() {
   const faqs = [
     {
       question: "How does ANDL enhance the learning experience for students?",
-      answer: "ANDL offers course-specific AI models that provide tailored responses, including explanations of bias, confidence levels, and rationale. This allows students to gain deeper insights and evaluate the reliability of AI-generated answers. Our collaborative platform also supports peer-to-peer interaction, enabling students to ask questions and receive feedback from their peers, TAs, and professors."
+      answer: "ANDL provides a personalised learning experience for every student. Our platfrom allows students to create their own leaning dashboard using all their course materials and then interact with their very own AI tutor. This allows students to get help specific to the content they are learning and allows them to learn more effectively."
     },
     {
-      question: "What benefits does ANDL offer to universities and educators?",
-      answer: "ANDL provides universities with fine-tuned models for specific courses, which help track student progress and identify areas where students struggle. Our analytics tools offer real-time insights into student engagement and question patterns. Additionally, our platform supports integration into university systems and fosters a sense of community through collaborative learning."
-    },
-    {
-      question: "Can individual learners use ANDL's tools and features?",
-      answer: "Yes, individual learners can access ANDL's AI-driven learning tools and collaborative platform. Our Individual Learner Plan provides access to course-specific AI responses, along with explanations of bias and confidence. Learners can also join our community to engage with other students and gain additional support."
+      question: "What makes ANDL different from other e-learning platforms?",
+      answer: "Unlike existing AI tutors, ANDL incorporates ground truth data from students and professors to provide more accurate and relevant responses. This collaborative approach ensures that the AI is constantly learning and improving and differentiating ourselves from traditional AI tutoring platforms that often neglect human oversight."
     },
     {
       question: "How does ANDL's community platform work?",
       answer: "ANDL's community platform allows students, TAs, and professors to interact and collaborate. Students can ask public questions, receive AI-generated responses, and get feedback from the community. This collaborative approach helps validate and enhance the AI's responses, providing a richer learning experience."
+    },
+    {
+      question: "Who can use ANDL?",
+      answer: "Both individual users and educational institutions can use ANDL. Our Individual Learner Plan gives students access to all of ANDL's features, while our Institutional Plan provides educational institutions with a customised platform to meet their needs including potential local hosting and data storage."
     }
   ]
 
   return (
-    <section 
-      id="faq" 
+    <section
+      id="faq"
       className="px-4 py-16 bg-[#f9f9f9] dark:bg-[#1F2937] text-[#00171f] dark:text-[#F9FAFB] relative -z-10"
     >
       <h2 className="text-3xl font-bold text-center mb-12">FAQs</h2>
       <div className="max-w-3xl mx-auto">
         {faqs.map((faq, index) => (
           <div key={index} className="mb-8 border-b border-gray-200 dark:border-gray-700 pb-4">
-            <div 
-              className="flex justify-between items-center cursor-pointer" 
+            <div
+              className="flex justify-between items-center cursor-pointer"
               onClick={() => toggleFAQ(index)}
             >
               <h3 className="text-xl font-semibold dark:text-[#F9FAFB]">
