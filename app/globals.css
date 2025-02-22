@@ -15,6 +15,7 @@ body {
   position: relative;
 }
 
+
 body::before,
 body::after {
   content: '';
@@ -191,4 +192,10 @@ body::after {
 }
 ::selection {
   background: #AFAFAF;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
