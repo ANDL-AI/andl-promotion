@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
@@ -23,7 +24,7 @@ const events: JourneyEvent[] = [
     id: 2,
     date: "Aug 2024",
     title: "ANDL Official",
-    text: "In August 2024, with all of us starting the final year of our bachleor, we (Sagar, Atilla, Manu, and Neel) officially got to developing ANDL. It was a matter of couple of months before we were running our first pilot at TU Delft.",
+    text: "In August 2024, with all of us starting the final year of our bachelor, we (Sagar, Atilla, Manu, and Neel) officially got to developing ANDL. It was a matter of couple of months before we were running our first pilot at TU Delft.",
   },
   {
     id: 3,
@@ -46,42 +47,44 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, event }) => {
-  return (
+  if (!isOpen || !event) return null;
+
+  // Render the modal using a portal attached to document.body
+  return ReactDOM.createPortal(
     <AnimatePresence>
-      {isOpen && event && (
+      <motion.div
+        className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <motion.div
-          className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          className="relative bg-white dark:bg-gray-800 rounded-lg p-6 max-w-lg w-full mx-4"
+          initial={{ scale: 0.8, y: 50 }}
+          animate={{ scale: 1, y: 0 }}
+          exit={{ scale: 0.8, y: 50 }}
+          transition={{ duration: 0.3 }}
         >
-          <motion.div
-            className="relative bg-white dark:bg-gray-800 rounded-lg p-6 max-w-lg w-full mx-4"
-            initial={{ scale: 0.8, y: 50 }}
-            animate={{ scale: 1, y: 0 }}
-            exit={{ scale: 0.8, y: 50 }}
-            transition={{ duration: 0.3 }}
+          <button
+            className="absolute top-2 right-2 text-gray-600 dark:text-gray-300 text-2xl"
+            onClick={onClose}
           >
-            <button
-              className="absolute top-2 right-2 text-gray-600 dark:text-gray-300 text-2xl"
-              onClick={onClose}
-            >
-              &times;
-            </button>
-            {event.image && (
-              <img
-                src={event.image}
-                alt={event.title}
-                className="w-full h-auto mb-4 rounded"
-              />
-            )}
-            <h3 className="text-2xl font-bold mb-2 dark:text-[#F9FAFB]">{event.title}</h3>
-            <p className="text-sm text-gray-500 mb-4">{event.date}</p>
-            <p className="text-gray-700 dark:text-gray-200">{event.text}</p>
-          </motion.div>
+            &times;
+          </button>
+          {event.image && (
+            <img
+              src={event.image}
+              alt={event.title}
+              className="w-full h-auto mb-4 rounded"
+            />
+          )}
+          <h3 className="text-2xl font-bold mb-2 dark:text-[#F9FAFB]">{event.title}</h3>
+          <p className="text-sm text-gray-500 mb-4">{event.date}</p>
+          <p className="text-gray-700 dark:text-gray-200">{event.text}</p>
         </motion.div>
-      )}
-    </AnimatePresence>
+      </motion.div>
+    </AnimatePresence>,
+    document.body
   );
 };
 
