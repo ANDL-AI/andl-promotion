@@ -31,13 +31,7 @@ const events: JourneyEvent[] = [
     date: "Dec 2024",
     title: "Yes Delft: Validation Lab",
     text: "We were accepted into the Yes Delft incubator. This is when we were able to find our target and validate ANDL.",
-  },
-  {
-    id: 4,
-    date: "March 2025",
-    title: "First Student Pilot",
-    text: "Calling all students! We are looking for students to join our pilot program. Be amongst the first to experience ANDL.",
-  },
+  }
 ];
 
 interface ModalProps {
@@ -99,7 +93,7 @@ export default function JourneyTimeline() {
       <div className="relative container mx-auto px-4">
         {/* Horizontal timeline line */}
         <div className="absolute top-1/2 left-0 w-full border-t-2 border-gray-300 dark:border-gray-600"></div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center sm:overflow-x-auto">
           {events.map((event, index) => (
             <motion.div
               key={event.id}
@@ -115,7 +109,7 @@ export default function JourneyTimeline() {
               onClick={() => setSelectedEvent(event)}
             >
               <CheckCircle className="w-10 h-10 text-[#636FF6]" />
-              <div className="mt-2 text-center">
+              <div className="mt-12 text-center">
                 <p className="text-sm text-gray-500">{event.date}</p>
                 <p className="text-lg font-semibold text-gray-800 dark:text-gray-100">
                   {event.title}

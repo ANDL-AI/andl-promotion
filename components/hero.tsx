@@ -107,7 +107,7 @@ export default function HeroAndDemo() {
       )}
 
       {/* Main Hero Content */}
-      <motion.div className="relative z-40 text-center pt-32 mb-16 transition-all duration-500">
+      <motion.div className="relative z-40 text-center pt-24 mb-16 transition-all duration-500">
         <div className="mx-auto w-full">
           <h1 className="text-5xl font-bold mb-6 leading-tight text-[#111827] dark:text-[#F9FAFB]">
             <span>Your AI Tutor, </span>
@@ -127,7 +127,7 @@ export default function HeroAndDemo() {
           <a
             href="https://forms.gle/vPRxg9XqbfFfiWCc6"
             target="_blank"
-            className="border px-8 py-3 rounded-full font-semibold transition-all duration-300 text-lg bg-white hover:bg-gray-500/10 text-black dark:bg-transparent dark:border-white dark:text-white dark:hover:bg-white/10"
+            className="border px-8 py-4 rounded-full font-semibold transition-all duration-300 text-lg bg-white hover:bg-gray-500/10 text-black dark:bg-transparent dark:border-white dark:text-white dark:hover:bg-white/10"
           >
             Join Waitlist
           </a>

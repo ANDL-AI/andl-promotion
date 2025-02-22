@@ -51,21 +51,26 @@ export default function FloatingHeader({
             <nav className="hidden md:flex items-center space-x-4">
               <Link
                 href="#"
-                onClick={() => scrollToSection("journey")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("journey");
+                }}
                 className="text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-[#6321E6] dark:hover:text-[#636FF6] transition-all duration-300"
               >
                 Our Journey
               </Link>
               <Link
                 href="#"
-                onClick={() => scrollToSection("faq")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("faq");
+                }}
                 className="text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-[#6321E6] dark:hover:text-[#636FF6] transition-all duration-300"
               >
                 FAQ
               </Link>
               <Link
                 href="mailto:team@andl.io"
-                onClick={() => scrollToSection("contact")}
                 className="text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-[#6321E6] dark:hover:text-[#636FF6] transition-all duration-300"
               >
                 Contact Us
@@ -94,16 +99,8 @@ export default function FloatingHeader({
                 }`}
               >
                 <a
-                  onClick={() => {
-                    scrollToSection("about");
-                    setIsMenuOpen(false);
-                  }}
-                  className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
-                >
-                  About Us
-                </a>
-                <a
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     scrollToSection("journey");
                     setIsMenuOpen(false);
                   }}
@@ -112,7 +109,8 @@ export default function FloatingHeader({
                   Our Journey
                 </a>
                 <a
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     scrollToSection("faq");
                     setIsMenuOpen(false);
                   }}
@@ -121,10 +119,7 @@ export default function FloatingHeader({
                   FAQ
                 </a>
                 <a
-                  onClick={() => {
-                    scrollToSection("contact");
-                    setIsMenuOpen(false);
-                  }}
+                  href="mailto:team@andl.io"
                   className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
                 >
                   Contact Us
