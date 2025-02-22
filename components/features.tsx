@@ -1,24 +1,21 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { HandHelping, MessageSquare, BarChartIcon as ChartNetwork } from "lucide-react"
 
 // Constants for consistent sizing
-const CARD_WIDTH = 320 // 80rem
-const CARD_GAP = 340 // Spread gap
-const STACK_OFFSET = 12 // Vertical offset for stacking
+const CARD_WIDTH = 320
+const STACK_OFFSET = 12
+const MIN_WIDTH_FOR_SPREAD = CARD_WIDTH * 3 + 100 // Minimum width needed to spread cards
 
 interface FeatureCardProps {
   icon: React.ReactNode
   title: string
   description: string
-  draggable?: boolean
   isSelected?: boolean
   isStacked?: boolean
   onClick?: () => void
-  onDragStart?: (e: React.DragEvent<HTMLDivElement>) => void
-  onDragEnd?: (e: React.DragEvent<HTMLDivElement>) => void
 }
 
 interface Card {
@@ -32,22 +29,16 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   icon,
   title,
   description,
-  draggable = false,
   isSelected = false,
   isStacked = false,
   onClick,
-  onDragStart,
-  onDragEnd,
 }) => {
   return (
     <div
-      draggable={draggable}
       onClick={onClick}
-      onDragStart={onDragStart}
-      onDragEnd={onDragEnd}
       style={{ width: CARD_WIDTH }}
-      className={`bg-white text-black p-6 rounded-lg select-none transition-all duration-300
-        ${isSelected ? "scale-110 shadow-xl z-50" : "cursor-move"}
+      className={`bg-white text-black p-6 rounded-lg select-none transition-all duration-300 cursor-pointer
+        ${isSelected ? "scale-110 shadow-xl z-50" : ""}
         ${isStacked ? "shadow-[0_4px_8px_rgba(0,0,0,0.1)]" : "shadow-lg hover:shadow-xl"}`}
     >
       <div className="mb-3">{icon}</div>
@@ -85,14 +76,26 @@ const FeatureCardsCarousel: React.FC = () => {
   const [cards, setCards] = useState<Card[]>(initialCards)
   const [isHovered, setIsHovered] = useState(false)
   const [selectedCard, setSelectedCard] = useState<number | null>(null)
-  const timerDuration = 10000
-  const intervalRef = useRef<number | null>(null)
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200)
+  const [canSpread, setCanSpread] = useState(windowWidth >= MIN_WIDTH_FOR_SPREAD)
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth
+      setWindowWidth(width)
+      setCanSpread(width >= MIN_WIDTH_FOR_SPREAD)
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   const stackStyles = (index: number) => {
-    if (isHovered) {
-      // When hovered, spread cards horizontally from center
+    if (isHovered && canSpread) {
+      // When hovered and enough space, spread cards
       const centerIndex = Math.floor(cards.length / 2)
-      const spread = (index - centerIndex) * CARD_GAP
+      const maxSpread = Math.min(340, windowWidth * 0.25)
+      const spread = (index - centerIndex) * maxSpread
       return {
         transform: `translateX(calc(-50% + ${spread}px)) rotate(0deg)`,
         zIndex: selectedCard === index ? 50 : cards.length - index,
@@ -100,82 +103,34 @@ const FeatureCardsCarousel: React.FC = () => {
       } as React.CSSProperties
     }
 
-    // Default stacked layout with more pronounced stacking effect
+    // Default stacked layout or mobile view
     const offset = index * STACK_OFFSET
-    const rotate = index % 2 === 0 ? 3 : -3 // Slightly larger rotation
+    const rotate = index % 2 === 0 ? 3 : -3
+    const isTop = selectedCard === index || (!canSpread && index === cards.length - 1)
+
     return {
       transform: `translateX(-50%) translateY(${offset}px) rotate(${rotate}deg)`,
-      zIndex: selectedCard === index ? 50 : cards.length - index,
+      zIndex: isTop ? 50 : cards.length - index,
       transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
     } as React.CSSProperties
   }
 
-  useEffect(() => {
-    const startTime = Date.now()
-
-    if (intervalRef.current !== null) {
-      window.clearInterval(intervalRef.current)
-    }
-
-    // Only run timer when not hovered or selected
-    if (!isHovered && selectedCard === null) {
-      intervalRef.current = window.setInterval(() => {
-        const elapsed = Date.now() - startTime
-        if (elapsed >= timerDuration) {
-          if (intervalRef.current !== null) {
-            window.clearInterval(intervalRef.current)
-          }
-          setCards((prevCards) => {
-            const [first, ...rest] = prevCards
-            return [...rest, first]
-          })
-        }
-      }, 50)
-    }
-
-    return () => {
-      if (intervalRef.current !== null) {
-        window.clearInterval(intervalRef.current)
-      }
-    }
-  }, [isHovered, selectedCard])
-
-  const handleDragStart = (e: React.DragEvent<HTMLDivElement>, index: number) => {
-    if (!isHovered && selectedCard === null) {
-      e.dataTransfer.setData("cardIndex", index.toString())
-    }
-  }
-
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault()
-    const draggedIndex = e.dataTransfer.getData("cardIndex")
-    if (draggedIndex !== "") {
+  const handleCardClick = () => {
+    if (!canSpread) {
+      // On mobile, clicking cycles through cards
       setCards((prevCards) => {
-        const updatedCards = [...prevCards]
-        const index = Number.parseInt(draggedIndex, 10)
-        const [removed] = updatedCards.splice(index, 1)
-        updatedCards.push(removed)
-        return updatedCards
+        const [first, ...rest] = prevCards
+        return [...rest, first]
       })
     }
-  }
-
-  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault()
-  }
-
-  const handleCardClick = (index: number) => {
-    setSelectedCard(selectedCard === index ? null : index)
   }
 
   return (
     <div className="flex flex-col items-center">
       <div
-        onDrop={handleDrop}
-        onDragOver={handleDragOver}
         className="relative w-80 h-[400px] transition-all duration-500"
         style={{
-          width: isHovered ? `${CARD_GAP * 3}px` : `${CARD_WIDTH}px`,
+          width: isHovered && canSpread ? "90vw" : `${CARD_WIDTH}px`,
         }}
       >
         {cards.map((card, index) => (
@@ -184,21 +139,23 @@ const FeatureCardsCarousel: React.FC = () => {
             style={stackStyles(index)}
             className="absolute top-0 left-1/2"
             onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseLeave={() => {
+              setIsHovered(false)
+              setSelectedCard(null)
+            }}
           >
             <FeatureCard
               icon={card.icon}
               title={card.title}
               description={card.description}
-              draggable={!isHovered && selectedCard === null}
               isSelected={selectedCard === index}
-              isStacked={!isHovered}
-              onClick={() => handleCardClick(index)}
-              onDragStart={(e) => handleDragStart(e, index)}
+              isStacked={!isHovered || !canSpread}
+              onClick={handleCardClick}
             />
           </div>
         ))}
       </div>
+      {!canSpread && <p className="mt-4 text-sm text-muted-foreground text-center">Click cards to view more</p>}
     </div>
   )
 }
