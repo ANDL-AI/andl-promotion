@@ -75,9 +75,11 @@ function AnimatedWord() {
 
 export default function HeroAndDemo() {
   // Determine dark mode by checking if the "dark" class exists on <html>
-  const [isDark, setIsDark] = useState(() =>
-    document.documentElement.classList.contains("dark")
-  );
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    setIsDark(document.documentElement.classList.contains("dark"));
+  }, []);
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
