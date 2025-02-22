@@ -165,8 +165,6 @@ class CanvasAnimation {
   }
 
   onMouseMove(e: MouseEvent) {
-    this.mouse.x = ((e.clientX / window.innerWidth) * 2 - 1) * 0.5;
-    this.mouse.y = (-(e.clientY / window.innerHeight) * 2 + 1) * 0.5;
   }
 
   onResize() {
