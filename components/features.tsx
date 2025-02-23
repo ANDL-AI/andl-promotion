@@ -155,7 +155,6 @@ const FeatureCardsCarousel: React.FC = () => {
           </div>
         ))}
       </div>
-      {!canSpread && <p className="mt-4 text-sm text-muted-foreground text-center">Click cards to view more</p>}
     </div>
   )
 }
