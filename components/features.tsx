@@ -90,6 +90,19 @@ const FeatureCardsCarousel: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
+  // Auto cycle the cards every 5 seconds when not hovered
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!isHovered) {
+        setCards((prevCards) => {
+          const [first, ...rest] = prevCards
+          return [...rest, first]
+        })
+      }
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [isHovered])
+
   const stackStyles = (index: number) => {
     if (isHovered && canSpread) {
       // When hovered and enough space, spread cards
@@ -160,4 +173,3 @@ const FeatureCardsCarousel: React.FC = () => {
 }
 
 export default FeatureCardsCarousel
-

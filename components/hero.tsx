@@ -74,7 +74,6 @@ function AnimatedWord() {
 }
 
 export default function HeroAndDemo() {
-  // Determine dark mode by checking if the "dark" class exists on <html>
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -92,23 +91,20 @@ export default function HeroAndDemo() {
     return () => observer.disconnect();
   }, []);
 
-  // Ref for the hero container (for mouse effect containment)
   const heroRef = useRef<HTMLElement>(null);
 
   return (
     <section
       id="hero"
       ref={heroRef}
-      className="relative h-screen overflow-hidden dark:bg-[#1F2937] flex flex-col justify-between"
+      className="relative min-h-screen overflow-hidden dark:bg-[#1F2937] flex flex-col justify-between"
     >
-      {/* Background: render MouseMoveEffect in dark mode; BackgroundAnimation in light mode */}
       {isDark ? (
         <DefaultMouseMoveEffect containerRef={heroRef} />
       ) : (
         <BackgroundAnimation />
       )}
 
-      {/* Main Hero Content */}
       <motion.div className="relative z-40 text-center pt-24 mb-16 transition-all duration-500">
         <div className="mx-auto w-full">
           <h1 className="text-5xl font-bold mb-6 leading-tight text-[#111827] dark:text-[#F9FAFB]">
@@ -135,7 +131,7 @@ export default function HeroAndDemo() {
           </a>
         </div>
       </motion.div>
-      <div className="hidden md:block">
+      <div className="block">
         <VisionSection />
       </div>
     </section>

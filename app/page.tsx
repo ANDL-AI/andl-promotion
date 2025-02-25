@@ -30,7 +30,7 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
       {/* Animated progress bar */}
-      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-primary z-50" style={{ scaleX }} />
+      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-primary z-50 overflow-hidden" style={{ scaleX }} />
 
       {/* Content container */}
       <div className="relative z-10">
@@ -40,14 +40,6 @@ export default function Component() {
           <HeroAndDemo />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <JourneyTimeline />
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}

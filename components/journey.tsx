@@ -29,7 +29,7 @@ const events: JourneyEvent[] = [
   {
     id: 3,
     date: "March 2025",
-    title: "Pilot Launch",
+    title: "First Open Pilot",
     text: "Launched a pilot with select students to test our platform and refine the experience. Join the waitlist now to be amongst the first to access ANDL!",
   }
 ];
