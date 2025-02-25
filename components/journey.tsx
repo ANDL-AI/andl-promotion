@@ -16,21 +16,21 @@ interface JourneyEvent {
 const events: JourneyEvent[] = [
   {
     id: 1,
-    date: "Nov 2023",
-    title: "Vrije University Hackathon",
-    text: "ANDL came to be as a winning ideathon project back in 2023. Despite earning a funding contingent on building at the time, the team did not pursue ANDL then.",
+    date: "Aug 2024",
+    title: "ANDL Official",
+    text: "In August 2024, with all of us starting the final year of our bachelors, we (Sagar, Atilla, Manu, and Neel) came together to build ANDL with a goal of providing students a more personal, accesible and efficient AI learning platform.",
   },
   {
     id: 2,
-    date: "Aug 2024",
-    title: "ANDL Official",
-    text: "In August 2024, with all of us starting the final year of our bachelor, we (Sagar, Atilla, Manu, and Neel) officially got to developing ANDL. It was a matter of couple of months before we were running our first pilot at TU Delft.",
+    date: "Jan 2025",
+    title: "Yes Delft: Validation Lab",
+    text: "After a couple months of development, we applied to the YES!Delft incubator to validate our product and market while connecting with industry experts.",
   },
   {
     id: 3,
-    date: "Dec 2024",
-    title: "Yes Delft: Validation Lab",
-    text: "We were accepted into the Yes Delft incubator. This is when we were able to find our target and validate ANDL.",
+    date: "March 2025",
+    title: "Pilot Launch",
+    text: "Launched a pilot with select students to test our platform and refine the experience. Join the waitlist now to be amongst the first to access ANDL!",
   }
 ];
 
