@@ -53,16 +53,6 @@ export default function FloatingHeader({
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection("journey");
-                }}
-                className="text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-[#6321E6] dark:hover:text-[#636FF6] transition-all duration-300"
-              >
-                Our Journey
-              </Link>
-              <Link
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
                   scrollToSection("faq");
                 }}
                 className="text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-[#6321E6] dark:hover:text-[#636FF6] transition-all duration-300"
@@ -98,16 +88,6 @@ export default function FloatingHeader({
                     : "opacity-0 -translate-y-2 pointer-events-none"
                 }`}
               >
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("journey");
-                    setIsMenuOpen(false);
-                  }}
-                  className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
-                >
-                  Our Journey
-                </a>
                 <a
                   onClick={(e) => {
                     e.preventDefault();
