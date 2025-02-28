@@ -1,87 +1,139 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import BackgroundAnimation from "./animation";
+import VisionSection from "@/components/features";
+import { HandHelping, MessageSquare, ChartNetwork } from "lucide-react";
 
-const messages = [
-  "The new standard in AI for education.",
-  "Empowering conscious learning with AI clarity modules.",
-  "Platform to learn with others and ANDL.", 
-  "Track progress, unlock potential, thrive.", 
-  "Revolutionizing learning experiences.",
-  "We are ANDL: Your partner in the future of learning.",
-  "The future of education!"
-]
-
-const gradients = [
-  "from-[#B01E68] to-[#8E3200]",
-  "from-[#c9184a] to-[#6D67E4]",
-  "from-[#F77E21] to-[#FF5D5D]",
-  "from-[#36BA98] to-[#0C1844]",
-  "from-[#624E88] to-[#C7253E]",
-  "from-[#e30613] to-[#3F37C9]",
-  "from-[#560BAD] to-[#4361EE]"
-]
-
-export default function HeroAndDemo() {
-  const [text, setText] = useState('')
-  const [isDeleting, setIsDeleting] = useState(false)
-  const [loopNum, setLoopNum] = useState(0)
-  const [typingSpeed, setTypingSpeed] = useState(25)
-
+function DefaultMouseMoveEffect({ containerRef }: { containerRef: React.RefObject<HTMLElement> }) {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   useEffect(() => {
-    let timer: NodeJS.Timeout
-
-    const handleTyping = () => {
-      const i = loopNum % messages.length
-      const fullText = messages[i]
-
-      setText(isDeleting 
-        ? fullText.substring(0, text.length - 1)
-        : fullText.substring(0, text.length + 1)
-      )
-
-      setTypingSpeed(isDeleting ? 25 : 50)
-
-      if (!isDeleting && text === fullText) {
-        const waitTime = i === 6 ? 4000 : 2000
-        setTimeout(() => setIsDeleting(true), waitTime)
-      } 
-      else if (isDeleting && text === '') {
-        setIsDeleting(false)
-        setLoopNum(loopNum + 1)
-      }
-    }
-
-    timer = setTimeout(handleTyping, typingSpeed)
-
-    return () => clearTimeout(timer)
-  }, [text, isDeleting, loopNum, typingSpeed])
+    const container = containerRef.current;
+    if (!container) return;
+    const handleMouseMove = (event: MouseEvent) => {
+      const rect = container.getBoundingClientRect();
+      setMousePosition({
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top,
+      });
+    };
+    container.addEventListener("mousemove", handleMouseMove);
+    return () => container.removeEventListener("mousemove", handleMouseMove);
+  }, [containerRef]);
 
   return (
-    <section id="hero" className="px-4 py-32 pb-16 text-center relative -z-10 overflow-hidden">
-      <h2 className="text-sm font-semibold text-[#6321E6] mb-4">For higher education,</h2>
-      <h1 className="text-5xl font-bold mb-6 leading-tight">
-        <span>
-          <span className="responsible">Responsible</span> 
-          <span className="and-text"> and </span>
-          <span className="explainable">Explainable </span>
-          <span className='and-text'>AI</span>
-        </span>
-      </h1>
-      <p className="mb-8 h-8 max-w-2xl mx-auto text-lg animate-fade-in-up animation-delay-600">
-        <span className={`bg-gradient-to-r ${gradients[loopNum % gradients.length]} bg-clip-text text-transparent transition-all duration-500 font-semibold`}>
-          {text}
-        </span>
-        <span className="animate-blink">|</span>
-      </p>      
-      <div className="flex justify-center gap-4 mb-0">
-        <a
-          href="mailto:team@andl.io"
-          className="border border-[#00171f] text-white hover:bg-[#6321E6] px-8 py-3 rounded-full font-semibold bg-black transition-all duration-300 text-lg"
+    <div
+      className="pointer-events-none absolute inset-0 z-30 transition-opacity duration-300"
+      style={{
+        background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29,78,216,0.15), transparent 80%)`,
+      }}
+    />
+  );
+}
+
+function AnimatedWord() {
+  const words = [
+    { text: "Affordable", color: "#3B82F6" },
+    { text: "Faster", color: "#636FF6" },
+    { text: "Personalized", color: "#8B5CF6" },
+  ];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [words.length]);
+
+  return (
+    <div
+      className="relative inline-block overflow-hidden"
+      style={{ height: "1.2em", perspective: "500px" }}
+    >
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={index}
+          initial={{ y: "100%", opacity: 0, rotateX: -90 }}
+          animate={{ y: "0%", opacity: 1, rotateX: 0 }}
+          exit={{ y: "-100%", opacity: 0, rotateX: 90 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          style={{
+            color: words[index].color,
+            display: "inline-block",
+            lineHeight: "1em",
+            textAlign: "center",
+          }}
         >
-          Book a demo →
-        </a>
+          {words[index].text}
+        </motion.span>
+      </AnimatePresence>
+    </div>
+  );
+}
+
+export default function HeroAndDemo() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    setIsDark(document.documentElement.classList.contains("dark"));
+  }, []);
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const heroRef = useRef<HTMLElement>(null);
+
+  return (
+    <section
+      id="hero"
+      ref={heroRef}
+      className="relative min-h-screen overflow-hidden dark:bg-[#1F2937] flex flex-col justify-between"
+    >
+      {isDark ? (
+        <DefaultMouseMoveEffect containerRef={heroRef} />
+      ) : (
+        <BackgroundAnimation />
+      )}
+
+      <motion.div className="relative z-40 text-center pt-24 mb-16 transition-all duration-500">
+        <div className="mx-auto w-full">
+          <h1 className="text-5xl font-bold mb-6 leading-tight text-[#111827] dark:text-[#F9FAFB]">
+            <span>Your AI Tutor, </span>
+            <span className="block ">Made </span>
+            <span className="block ">
+              <AnimatedWord />
+            </span>
+          </h1>
+        </div>
+        <div className="flex justify-center gap-4">
+          <a
+            href="mailto:team@andl.io"
+            className="border-4 border-[#8B5CF6] px-8 py-3 rounded-full font-semibold transition-all duration-300 text-lg bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100"
+          >
+            Book a demo →
+          </a>
+          <a
+            href="https://forms.gle/vPRxg9XqbfFfiWCc6"
+            target="_blank"
+            className="border px-8 py-4 rounded-full font-semibold transition-all duration-300 text-lg bg-white hover:bg-gray-500/10 text-black dark:bg-transparent dark:border-white dark:text-white dark:hover:bg-white/10"
+          >
+            Join Waitlist
+          </a>
+        </div>
+      </motion.div>
+      <div className="block">
+        <VisionSection />
       </div>
     </section>
-  )
+  );
 }
