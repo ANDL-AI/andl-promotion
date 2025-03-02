@@ -203,7 +203,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#f9f9f9] dark:bg-[#1F2937]">
       <div className="max-w-6xl mx-auto">
-        {isHomePage && <div className="w-full h-px bg-gray-400 dark:bg-gray-400" />}
+        {<div className="w-full h-px bg-gray-400 dark:bg-gray-400" />}
         <div className="px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Column 1: Logo, Slogan, Social */}
           <div className="space-y-4">
