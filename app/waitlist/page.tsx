@@ -1,10 +1,14 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
+import { motion } from "framer-motion"
 import { submitToWaitlist } from "./waitlistValidation"
+import FloatingHeader from "@/components/header-waitlist"
+import Footer from "@/components/footer"
+import BackgroundAnimation from "@/components/animation"
 
 // Schema to include name field
 const waitlistSchema = z.object({
@@ -29,7 +33,7 @@ export default function WaitlistPage() {
   })
 
   // Fetch enrolled count on component mount
-  useState(() => {
+  useEffect(() => {
     const fetchEnrolledCount = async () => {
       try {
         const sheetUrl =
@@ -77,89 +81,160 @@ export default function WaitlistPage() {
     }
   }
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  }
+
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4 py-12">
-      {/* ANDL Logo */}
-      <div className="text-5xl font-bold mb-12">ANDL</div>
+    <div className="h-full w-full overflow-hidden flex flex-col items-center">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="w-full"
+      >
+        <FloatingHeader />
+      </motion.div>
 
-      {/* Card Container */}
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
-        <h2 className="text-2xl font-bold text-center mb-2">Join the Waitlist</h2>
-
-        <p className="text-center text-gray-600 mb-8">Sign up for early access to ANDL</p>
-
-        {enrolledCount !== null && (
-          <p className="text-sm text-center mb-6 text-gray-500">
-            <span className="font-medium">{enrolledCount}</span> people have already joined
-          </p>
-        )}
-
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <div className="space-y-2">
-            <label htmlFor="name" className="block text-sm font-medium">
-              Name
-            </label>
-            <input
-              {...register("name")}
-              id="name"
-              type="text"
-              placeholder="Enter your name"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
-              disabled={isSubmitting}
-            />
-            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="email" className="block text-sm font-medium">
-              Email
-            </label>
-            <input
-              {...register("email")}
-              id="email"
-              type="email"
-              placeholder="Enter your email"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
-              disabled={isSubmitting}
-            />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-          </div>
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full py-2 bg-[#0f172a] hover:bg-[#1e293b] text-white rounded-md transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+      <section className="min-h-screen flex flex-col items-center justify-center px-4 py-12 w-full dark:bg-gray-900">
+        <BackgroundAnimation/>
+        {/* Card Container */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full max-w-2xl bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-xl p-8 md:p-10"
+        >
+          <motion.div
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.3 }}
           >
-            {isSubmitting ? (
-              <div className="flex items-center justify-center">
-                <svg
-                  className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  />
-                </svg>
-                Processing...
-              </div>
-            ) : (
-              "Submit"
-            )}
-          </button>
-        </form>
+            <h2 className="text-3xl font-bold text-center mb-2 text-gray-900 dark:text-white">Join the Waitlist</h2>
+          </motion.div>
 
-        {successMessage && (
-          <div className="mt-6 text-center p-4 rounded-md bg-green-50 text-green-600">{successMessage}</div>
-        )}
+          <motion.div
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.4 }}
+          >
+            <p className="text-center text-gray-600 dark:text-gray-300 mb-8">Sign up for early access to ANDL</p>
+          </motion.div>
 
-        {errorMessage && <div className="mt-6 text-center p-4 rounded-md bg-red-50 text-red-600">{errorMessage}</div>}
-      </div>
-    </section>
+          {enrolledCount !== null && (
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.5 }}
+            >
+              <p className="text-sm text-center mb-6 text-gray-500 dark:text-gray-400">
+                <span className="font-medium">{enrolledCount}</span> people have already joined
+              </p>
+            </motion.div>
+          )}
+
+          <motion.form
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.6 }}
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-6"
+          >
+            <div className="space-y-2">
+              <label htmlFor="name" className="block text-sm font-medium dark:text-gray-200">
+                Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                {...register("name")}
+                id="name"
+                type="text"
+                placeholder="Enter your name"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                disabled={isSubmitting}
+              />
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="email" className="block text-sm font-medium dark:text-gray-200">
+                Email <span className="text-red-500">*</span>
+              </label>
+              <input
+                {...register("email")}
+                id="email"
+                type="email"
+                placeholder="Enter your email"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                disabled={isSubmitting}
+              />
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+            </div>
+
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full py-3 bg-[#0f172a] hover:bg-[#1e293b] dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base font-medium"
+            >
+              {isSubmitting ? (
+                <div className="flex items-center justify-center">
+                  <svg
+                    className="animate-spin -ml-1 mr-2 h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    />
+                  </svg>
+                  Processing...
+                </div>
+              ) : (
+                "Join Waitlist"
+              )}
+            </motion.button>
+          </motion.form>
+
+          {successMessage && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-6 text-center p-4 rounded-lg bg-green-50 dark:bg-green-900 text-green-600 dark:text-green-300"
+            >
+              {successMessage}
+            </motion.div>
+          )}
+
+          {errorMessage && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-6 text-center p-4 rounded-lg bg-red-50 dark:bg-red-900 text-red-600 dark:text-red-300"
+            >
+              {errorMessage}
+            </motion.div>
+          )}
+        </motion.div>
+      </section>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        className="w-full"
+      >
+        <Footer />
+      </motion.div>
+    </div>
   )
 }
-
