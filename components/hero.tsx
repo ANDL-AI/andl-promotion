@@ -123,7 +123,7 @@ export default function HeroAndDemo() {
             Book a demo →
           </a>
           <a
-            href="https://forms.gle/vPRxg9XqbfFfiWCc6"
+            href="/waitlist"
             target="_blank"
             className="border px-8 py-4 rounded-full font-semibold transition-all duration-300 text-lg bg-white hover:bg-gray-500/10 text-black dark:bg-transparent dark:border-white dark:text-white dark:hover:bg-white/10"
           >
