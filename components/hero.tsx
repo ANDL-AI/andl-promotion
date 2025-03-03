@@ -116,19 +116,19 @@ export default function HeroAndDemo() {
           </h1>
         </div>
         <div className="flex justify-center gap-4">
-          <a
-            href="mailto:team@andl.io"
-            className="border-4 border-[#8B5CF6] px-8 py-3 rounded-full font-semibold transition-all duration-300 text-lg bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100"
-          >
-            Book a demo →
-          </a>
-          <a
-            href="/waitlist"
-            target="_blank"
-            className="border px-8 py-4 rounded-full font-semibold transition-all duration-300 text-lg bg-white hover:bg-gray-500/10 text-black dark:bg-transparent dark:border-white dark:text-white dark:hover:bg-white/10"
-          >
-            Join Waitlist
-          </a>
+        <a
+          href="mailto:team@andl.io"
+          className="border-4 border-[#8B5CF6] px-4 py-2 md:px-8 md:py-3 rounded-full font-semibold transition-all duration-300 text-base md:text-lg bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100"
+        >
+          Book a demo →
+        </a>
+        <a
+          href="/waitlist"
+          target="_blank"
+          className="border px-4 py-2 md:px-8 md:py-4 rounded-full font-semibold transition-all duration-300 text-base md:text-lg bg-white hover:bg-gray-500/10 text-black dark:bg-transparent dark:border-white dark:text-white dark:hover:bg-white/10"
+        >
+          Get Early Access
+        </a>
         </div>
       </motion.div>
       <div className="block">

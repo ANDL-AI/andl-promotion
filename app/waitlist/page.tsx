@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { motion } from "framer-motion"
-import { submitToWaitlist } from "./waitlistValidation"
+import { submitToWaitlist} from "@/app/waitlist/waitlistValidation"
 import FloatingHeader from "@/components/header-waitlist"
 import Footer from "@/components/footer"
 import BackgroundAnimation from "@/components/animation"
@@ -61,7 +61,7 @@ export default function WaitlistPage() {
       if (result.success) {
         // Clear the form
         reset()
-        setSuccessMessage("Thank you for joining the waitlist! We'll contact you soon.")
+        setSuccessMessage("Thank you for signing up! We'll contact you soon.")
 
         // Update the enrolled count
         if (enrolledCount !== null) {
@@ -92,13 +92,16 @@ export default function WaitlistPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full"
+        className="w-full relative z-40"
       >
         <FloatingHeader />
       </motion.div>
+      {/* Position the animation with proper z-index */}
+      <div className="absolute inset-0 z-0">
+        <BackgroundAnimation />
+      </div>
+      <section className="min-h-screen flex flex-col items-center justify-center px-4 py-12 w-full dark:bg-gray-900 relative z-10">
 
-      <section className="min-h-screen flex flex-col items-center justify-center px-4 py-12 w-full dark:bg-gray-900">
-        <BackgroundAnimation/>
         {/* Card Container */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -112,7 +115,7 @@ export default function WaitlistPage() {
             animate="visible"
             transition={{ delay: 0.3 }}
           >
-            <h2 className="text-3xl font-bold text-center mb-2 text-gray-900 dark:text-white">Join the Waitlist</h2>
+            <h2 className="text-3xl font-bold text-center mb-2 text-gray-900 dark:text-white">Take Your Place!</h2>
           </motion.div>
 
           <motion.div
@@ -123,20 +126,6 @@ export default function WaitlistPage() {
           >
             <p className="text-center text-gray-600 dark:text-gray-300 mb-8">Sign up for early access to ANDL</p>
           </motion.div>
-
-          {enrolledCount !== null && (
-            <motion.div
-              variants={fadeIn}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.5 }}
-            >
-              <p className="text-sm text-center mb-6 text-gray-500 dark:text-gray-400">
-                <span className="font-medium">{enrolledCount}</span> people have already joined
-              </p>
-            </motion.div>
-          )}
-
           <motion.form
             variants={fadeIn}
             initial="hidden"
@@ -180,7 +169,7 @@ export default function WaitlistPage() {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3 bg-[#0f172a] hover:bg-[#1e293b] dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base font-medium"
+              className="w-full py-3 bg-[#0f172a] hover:bg-[#1e293b] border-4 border-[#8B5CF6] dark:border-0 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base font-medium"
             >
               {isSubmitting ? (
                 <div className="flex items-center justify-center">
@@ -200,7 +189,7 @@ export default function WaitlistPage() {
                   Processing...
                 </div>
               ) : (
-                "Join Waitlist"
+                "Enroll"
               )}
             </motion.button>
           </motion.form>
