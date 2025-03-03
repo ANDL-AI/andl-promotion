@@ -87,21 +87,20 @@ export default function WaitlistPage() {
   }
 
   return (
-    <div className="h-full w-full overflow-hidden flex flex-col items-center">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="w-full relative z-40"
-      >
-        <FloatingHeader />
-      </motion.div>
-      {/* Position the animation with proper z-index */}
+    <div className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <BackgroundAnimation />
       </div>
       <section className="min-h-screen flex flex-col items-center justify-center px-4 py-12 w-full dark:bg-gray-900 relative z-10">
-
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="w-full fixed top-0 left-0 z-40"
+        >
+        <FloatingHeader />
+      </motion.div>
+      
         {/* Card Container */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}

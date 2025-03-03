@@ -125,7 +125,7 @@ export default function HeroAndDemo() {
         <a
           href="/waitlist"
           target="_blank"
-          className="border px-4 py-2 md:px-8 md:py-4 rounded-full font-semibold transition-all duration-300 text-base md:text-lg bg-white hover:bg-gray-500/10 text-black dark:bg-transparent dark:border-white dark:text-white dark:hover:bg-white/10"
+          className="border px-4 py-2 pt-3 md:px-8 md:py-4 rounded-full font-semibold transition-all duration-300 text-base md:text-lg bg-white hover:bg-gray-500/10 text-black dark:bg-transparent dark:border-white dark:text-white dark:hover:bg-white/10"
         >
           Get Early Access
         </a>
