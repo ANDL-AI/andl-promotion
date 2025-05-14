@@ -4,12 +4,12 @@ import "./globals.css";
 import Head from 'next/head';
 
 export const metadata: Metadata = {
-  title: "ANDL AI | Responsible AI for Education",
-  description: "At ANDL, we build responsible and explainable AI solutions for education. Revolutionize learning with AI designed for students and educators.",
-  keywords: "ANDL AI, responsible AI, explainable AI, educational AI, university AI, AI for education",
+  title: "ANDL AI | Your AI study companion",
+  description: "At ANDL, we provide you with your personal AI study companion for end to end learning.",
+  keywords: "ANDL AI, personalized AI, educational AI, university AI, AI for education",
   openGraph: {
-    title: "ANDL AI | Responsible AI for Education",
-    description: "At ANDL, we build responsible and explainable AI solutions tailored for the education sector.",
+    title: "ANDL AI | Your AI study companion",
+    description: "At ANDL, we provide you with your personal AI study companion for end to end learning.",
     url: "https://www.andl.io",
     type: "website",
     locale: "en_US",
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ANDL AI | Responsible AI for Education",
-    description: "Learn how ANDL is transforming education with responsible and explainable AI.",
+    title: "ANDL AI | Your AI study companion",
+    description: "Learn how ANDL is transforming education with personalized AI study companions.",
     images: "https://github.com/ANDL-AI/public-assets/blob/main/andl_logo.png?raw=true",
   },
 };
@@ -44,14 +44,14 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         {/* Basic Meta Tags */}
-        <meta name="description" content="At ANDL, we build responsible and explainable AI for education. Revolutionize learning with AI designed for students and educators." />
-        <meta name="keywords" content="ANDL AI, responsible AI, explainable AI, educational AI, university AI, AI for education" />
+        <meta name="description" content="At ANDL, we provide you with your personal AI study companion for end to end learning." />
+        <meta name="keywords" content="ANDL AI, personalized AI, educational AI, university AI, AI for education" />
         <meta name="author" content="ANDL AI Team" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph / Facebook */}
-        <meta property="og:title" content="ANDL AI | Responsible AI for Education" />
-        <meta property="og:description" content="At ANDL, we build responsible and explainable AI solutions tailored for the education sector." />
+        <meta property="og:title" content="ANDL AI | Your AI study companion" />
+        <meta property="og:description" content="At ANDL, we provide you with your personal AI study companion for end to end learning." />
         <meta property="og:url" content="https://www.andl.io" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://github.com/ANDL-AI/public-assets/blob/main/andl_logo.png?raw=true" />
@@ -60,8 +60,8 @@ export default function RootLayout({
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@ANDL_AI" />
-        <meta name="twitter:title" content="ANDL AI | Responsible AI for Education" />
-        <meta name="twitter:description" content="Learn how ANDL is transforming education with responsible and explainable AI." />
+        <meta name="twitter:title" content="ANDL AI | Your AI study companion" />
+        <meta name="twitter:description" content="Learn how ANDL is transforming education with personalized AI study companions." />
         <meta name="twitter:image" content="https://github.com/ANDL-AI/public-assets/blob/main/andl_logo.png?raw=true" />
 
         {/* Viewport Meta Tag */}
